@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Adam Wollins — Technology executive, ICT strategist, and trusted partner to schools and education organisations across Australia.">
+<title>Adam Wollins</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── HOME-SPECIFIC ── */
+.hero {
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 3rem;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  margin-bottom: 1.1rem;
+  max-width: 640px;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--text2);
+  line-height: 1.75;
+  max-width: 580px;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.83rem;
+  color: var(--text3);
+}
+.hero-contact a { color: var(--text3); text-decoration: none; border-bottom: 1px solid var(--border2); padding-bottom: 1px; transition: color 0.15s, border-color 0.15s; }
+.hero-contact a:hover { color: var(--accent); border-color: var(--accent-bdr); }
+
+/* About strip */
+.about-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+.about-cell {
+  background: var(--surface);
+  padding: 1.4rem 1.5rem;
+}
+.about-cell .num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.about-cell .label {
+  font-size: 0.82rem;
+  color: var(--text3);
+  line-height: 1.4;
+}
+
+/* Section nav cards */
+.section-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.section-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+.section-card::after {
+  content: '→';
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.15s, transform 0.15s;
+}
+.section-card:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  border-color: var(--accent-bdr);
+}
+.section-card:hover::after { opacity: 1; transform: translateX(0); }
+
+.section-card .card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+.section-card .card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.section-card .card-desc {
+  font-size: 0.87rem;
+  color: var(--text2);
+  line-height: 1.6;
+  margin: 0;
+}
+.section-card .card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+/* Approach section */
+.approach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.approach-item {
+  padding: 1.1rem 0;
+  border-top: 2px solid var(--border2);
+  transition: border-color 0.15s;
+}
+.approach-item:hover { border-color: var(--accent); }
+.approach-item .ai-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+.approach-item p { font-size: 0.85rem; line-height: 1.6; }
+
+@media (max-width: 640px) {
+  .about-strip   { grid-template-columns: 1fr; }
+  .section-cards { grid-template-columns: 1fr; }
+  .approach-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Adam <span>Wollins</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="ict-strategy.html">ICT Strategy for Schools</a></li>
+    </ul>
+    <a href="mailto:adamwollins@me.com" class="btn nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="page">
+  <header class="hero fade-up">
+    <div class="hero-eyebrow">Technology Executive · ICT Strategist · Education Leader</div>
+    <h1>Helping schools think clearly about technology — and act on it.</h1>
+    <p class="hero-sub">I'm Adam Wollins. For over 26 years I've led technology strategy, transformation, and operations across education — from individual schools to the largest education IT department in the Southern Hemisphere. I work alongside school leadership as a trusted partner, not a vendor.</p>
+    <div class="hero-actions">
+      <a href="ict-strategy.html" class="btn btn-primary">ICT Strategy for Schools</a>
+      <a href="cv.html" class="btn btn-secondary">View my CV</a>
+    </div>
+    <div class="hero-contact">
+      <a href="mailto:adamwollins@me.com">adamwollins@me.com</a>
+      <span>·</span>
+      <a href="tel:+61400842314">(+61) 400 842 314</a>
+      <span>·</span>
+      <a href="https://www.linkedin.com/in/adamwollins" target="_blank" rel="noopener">LinkedIn</a>
+      <span>·</span>
+      <span>Sydney, NSW</span>
+    </div>
+  </header>
+
+  <!-- ── STAT STRIP ── -->
+  <div class="about-strip fade-up delay-1">
+    <div class="about-cell">
+      <div class="num">26+</div>
+      <div class="label">Years leading technology in education &amp; government</div>
+    </div>
+    <div class="about-cell">
+      <div class="num">800K+</div>
+      <div class="label">Students supported across NSW public schools</div>
+    </div>
+    <div class="about-cell">
+      <div class="num">ELT</div>
+      <div class="label">Executive Leadership Team member at Hills Grammar School</div>
+    </div>
+  </div>
+
+  <!-- ── WHAT'S ON THIS SITE ── -->
+  <section class="fade-up delay-2">
+    <div class="section-label">What's here</div>
+    <div class="section-cards">
+
+      <a href="cv.html" class="section-card">
+        <div class="card-icon">📄</div>
+        <div class="card-title">My CV</div>
+        <p class="card-desc">A full professional profile — career history, key achievements, capabilities, and qualifications. For recruiters, principals, and anyone exploring a working relationship.</p>
+        <div class="card-tags">
+          <span class="tag">Career history</span>
+          <span class="tag">Achievements</span>
+          <span class="tag">Qualifications</span>
+        </div>
+      </a>
+
+      <a href="ict-strategy.html" class="section-card">
+        <div class="card-icon">🏫</div>
+        <div class="card-title">ICT Strategy for Schools</div>
+        <p class="card-desc">Services, frameworks, and thinking for school leaders navigating technology strategy, AI adoption, and digital transformation. Articles and resources coming soon.</p>
+        <div class="card-tags">
+          <span class="tag accent">Services</span>
+          <span class="tag">AI &amp; Schools</span>
+          <span class="tag">Resources</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="fade-up delay-3">
+    <div class="section-label">How I work</div>
+    <div class="callout blue" style="margin-bottom: 1.5rem;">
+      <strong>I become part of your team.</strong> When I work with a school, I don't arrive with a standard playbook and leave with a report. I sit alongside your leadership, understand your community, and build something that is genuinely yours — strategy, capability, culture, and all.
+    </div>
+    <div class="approach-grid">
+      <div class="approach-item">
+        <div class="ai-title">Strategic, not just technical</div>
+        <p>Technology decisions in schools are always educational decisions. I work from purpose first, and technology second.</p>
+      </div>
+      <div class="approach-item">
+        <div class="ai-title">Trusted, not transactional</div>
+        <p>I build real relationships with school leadership — the kind where you call me when something unexpected happens, not just when the project is running.</p>
+      </div>
+      <div class="approach-item">
+        <div class="ai-title">Practical, not theoretical</div>
+        <p>Everything I bring has been tested in real schools and real government departments. No ivory tower frameworks. Just things that work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CURRENT ROLE ── -->
+  <section class="fade-up delay-4">
+    <div class="section-label">Currently</div>
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+        <div>
+          <h3 style="font-size: 1.05rem; margin-bottom: 0.15rem;">Director of Information Technology</h3>
+          <div style="font-family: var(--font-display); font-style: italic; color: var(--accent); font-size: 0.95rem;">Hills Grammar School</div>
+        </div>
+        <span class="tag accent">ELT Member · 2023 – Present</span>
+      </div>
+      <p>Leading a team of 8 across DevOps, IT PMO, and operational support. Author of the school's <strong>True North ICT Strategy 2025–2030</strong> — a three-pillar roadmap built around educational outcomes, operational efficiency, and community engagement. Currently leading AI capability programs, cyber security uplift, and capital works technology delivery.</p>
+    </div>
+  </section>
+
+</div><!-- /page -->
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2025 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
+    <span>
+      <a href="mailto:adamwollins@me.com">adamwollins@me.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/adamwollins" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
