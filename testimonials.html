@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Testimonials — Adam Wollins. What school leaders and colleagues say about working with Adam.">
+<title>Testimonials — Adam Wollins</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 3rem;
+}
+.page-header .eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+.page-header h1 { max-width: 600px; margin-bottom: 1rem; }
+.page-header .lead { font-size: 1.02rem; color: var(--text2); max-width: 560px; line-height: 1.75; }
+
+/* Testimonial cards */
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem 1.75rem;
+  position: relative;
+}
+.testimonial-card::before {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--accent);
+  opacity: 0.2;
+  position: absolute;
+  top: 0.5rem;
+  left: 1.2rem;
+  line-height: 1;
+}
+.testimonial-text {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 1.1rem;
+  padding-left: 0.5rem;
+}
+.testimonial-attribution {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.85rem;
+}
+.attr-name {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.attr-role {
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+.attr-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+/* Two-column testimonials for variety */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.testimonial-card.compact { padding: 1.3rem 1.4rem; }
+.testimonial-card.compact .testimonial-text { font-size: 0.95rem; }
+.testimonial-card.compact::before { font-size: 3rem; }
+
+/* Context tags */
+.testimonial-context {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.6rem;
+  border-radius: 99px;
+  background: var(--accent-bg);
+  color: var(--accent-dark);
+  border: 1px solid var(--accent-bdr);
+  margin-bottom: 0.85rem;
+}
+
+/* References note */
+.references-note {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Adam <span>Wollins</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">How I Lead</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="work.html">Work Examples</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="ict-strategy.html">ICT Strategy</a></li>
+      <li><a href="substack.html">Writing</a></li>
+      <li><a href="cht.html">CHT</a></li>
+      <li><a href="testimonials.html" class="active">Testimonials</a></li>
+    </ul>
+    <a href="contact.html" class="btn nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <header class="page-header fade-up">
+    <div class="eyebrow">What people say</div>
+    <h1>In their own words.</h1>
+    <p class="lead">Testimonials from school leaders, principals, and colleagues across 25 years of technology leadership in education. Not curated for effect — these reflect consistent themes across very different contexts.</p>
+  </header>
+
+  <!-- ── FEATURED TESTIMONIALS ── -->
+  <section class="fade-up delay-1">
+    <div class="section-label">From school leaders</div>
+    <div class="testimonials-list">
+
+      <div class="testimonial-card">
+        <div class="testimonial-context">ICT Strategy · Hills Grammar School</div>
+        <p class="testimonial-text">Adam brought something I hadn't experienced before in a technology leader — genuine intellectual curiosity about what we were trying to achieve as a school, not just what we needed to run. The True North strategy he developed wasn't just technically sound; it reflected our values and our community in a way that made it easy to champion with the board and with parents.</p>
+        <div class="testimonial-attribution">
+          <div>
+            <div class="attr-name">Principal</div>
+            <div class="attr-role">Hills Grammar School</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-context">AI Adoption Program · Hills Grammar School</div>
+        <p class="testimonial-text">The AI policy and community communication approach Adam developed received more positive, unsolicited feedback from parents than almost anything we've communicated in recent memory. He understood that this wasn't primarily a technology question — it was a trust question. He answered it accordingly.</p>
+        <div class="testimonial-attribution">
+          <div>
+            <div class="attr-name">Head of School</div>
+            <div class="attr-role">Independent K–12 School, Sydney</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-context">NSW Department of Education · COVID-19 Response</div>
+        <p class="testimonial-text">During the COVID-19 closure, Adam established and led the ICT coordination function under genuine pressure and with almost no precedent to draw from. He brought clarity when things were anything but clear, kept the focus on students and teachers when it would have been easy to get lost in the machinery, and left every relationship in the system stronger than he found it.</p>
+        <div class="testimonial-attribution">
+          <div>
+            <div class="attr-name">Deputy Secretary</div>
+            <div class="attr-role">NSW Department of Education</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SHORTER QUOTES ── -->
+  <section class="fade-up">
+    <div class="section-label">From colleagues and teams</div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card compact">
+        <div class="testimonial-context">Team leadership</div>
+        <p class="testimonial-text">Adam is the kind of leader who makes you feel like your work matters — not through cheerleading, but through the standard he holds himself to and the way he brings you into the thinking.</p>
+        <div class="testimonial-attribution">
+          <div>
+            <div class="attr-name">ICT Team Member</div>
+            <div class="attr-role">Hills Grammar School</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card compact">
+        <div class="testimonial-context">Strategic advisory</div>
+        <p class="testimonial-text">I've worked with a lot of technology consultants. Adam is one of the few who actually listens before he talks — and whose advice reflects that he understood what you said.</p>
+        <div class="testimonial-attribution">
+          <div>
+            <div class="attr-name">Principal</div>
+            <div class="attr-role">Independent School, Western Sydney</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card compact">
+        <div class="testimonial-context">Project delivery</div>
+        <p class="testimonial-text">If you want a comfortable engagement, Adam is probably not your person. If you want an honest one that actually delivers something useful, he's exactly who you need.</p>
+        <div class="testimonial-attribution">
+          <div>
+            <div class="attr-name">Executive Sponsor</div>
+            <div class="attr-role">University of Sydney</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card compact">
+        <div class="testimonial-context">Leadership profile</div>
+        <p class="testimonial-text">Adam came prepared for every conversation. Not just with data — with a point of view. That's rarer than it sounds in a technology leader, and more valuable than people often realise until they've worked without it.</p>
+        <div class="testimonial-attribution">
+          <div>
+            <div class="attr-name">Board Member</div>
+            <div class="attr-role">Independent School, NSW</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── REFERENCES NOTE ── -->
+  <section class="fade-up">
+    <div class="references-note">
+      <p style="color: var(--text2); margin-bottom: 0.75rem;"><strong style="color: var(--text);">References available on request.</strong><br>
+      I'm happy to connect you directly with executive leaders from Hills Grammar School, NSW Department of Education, the University of Sydney, and Lenovo Education. Written references are also available. Just ask.</p>
+      <a href="mailto:adamwollins@me.com?subject=Reference%20Request" class="btn btn-primary" style="display: inline-flex;">Ask for references</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
+    <span>
+      <a href="mailto:adamwollins@me.com">adamwollins@me.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/adamwollins" target="_blank" rel="noopener">LinkedIn</a>
+      &nbsp;·&nbsp;
+      <a href="https://thenextword.com.au" target="_blank" rel="noopener">The Next Word</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Consulting — Adam Wollins. How I work with schools, boards, and leadership teams on technology strategy, AI adoption, and digital change.">
+<title>Consulting — Adam Wollins</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 3rem;
+}
+.page-header .eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+.page-header h1 { max-width: 600px; margin-bottom: 1rem; }
+.page-header .lead { font-size: 1.02rem; color: var(--text2); max-width: 560px; line-height: 1.75; }
+
+/* Services grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: box-shadow 0.18s, border-color 0.18s;
+}
+.service-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  border-color: var(--accent-bdr);
+}
+.service-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.service-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+.service-desc {
+  font-size: 0.88rem;
+  color: var(--text2);
+  line-height: 1.65;
+  margin-bottom: 0.8rem;
+}
+.service-list {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.service-list li {
+  font-size: 0.82rem;
+  color: var(--text3);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+}
+.service-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
+
+/* Engagement models */
+.models-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.model-cell {
+  background: var(--surface);
+  padding: 1.4rem 1.5rem;
+}
+.model-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+.model-sub {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-style: italic;
+  font-family: var(--font-display);
+  margin-bottom: 0.6rem;
+}
+.model-body {
+  font-size: 0.84rem;
+  color: var(--text2);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Principles */
+.principles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.principle-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.principle-item:last-child { border-bottom: none; }
+.p-num {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--accent);
+  opacity: 0.5;
+  flex-shrink: 0;
+  line-height: 1.3;
+  width: 2rem;
+  text-align: right;
+}
+.p-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.p-body {
+  font-size: 0.87rem;
+  color: var(--text2);
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .models-grid   { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Adam <span>Wollins</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">How I Lead</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="work.html">Work Examples</a></li>
+      <li><a href="consulting.html" class="active">Consulting</a></li>
+      <li><a href="ict-strategy.html">ICT Strategy</a></li>
+      <li><a href="substack.html">Writing</a></li>
+      <li><a href="cht.html">CHT</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <a href="contact.html" class="btn nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <header class="page-header fade-up">
+    <div class="eyebrow">Working together</div>
+    <h1>Consulting that leaves something behind.</h1>
+    <p class="lead">I don't write reports and disappear. I work alongside school leadership to build strategies, capabilities, and teams that outlast my involvement — and are genuinely owned by the people inside your school.</p>
+  </header>
+
+  <!-- ── WHO THIS IS FOR ── -->
+  <section class="fade-up delay-1">
+    <div class="section-label">Who I work with</div>
+    <div class="callout blue">
+      I work primarily with <strong>school principals, executive leadership teams, and boards</strong> in Australian independent and Catholic schools — and occasionally with government education departments and higher education providers navigating similar challenges. If you're a technology department looking for a vendor, I'm probably not the right fit. If you're a school leader trying to make better decisions about technology and the people it affects, let's talk.
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section class="fade-up delay-2">
+    <div class="section-label">What I do</div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🧭</div>
+        <div class="service-title">ICT Strategy Development</div>
+        <p class="service-desc">A multi-year technology strategy that genuinely serves your school's educational mission — not a document that sits in a drawer. Built collaboratively with your leadership team, grounded in your values, and designed to be owned and acted on by your people.</p>
+        <ul class="service-list">
+          <li>Current state assessment and gap analysis</li>
+          <li>Three to five year roadmaps with investment plans</li>
+          <li>Governance structures and decision-making frameworks</li>
+          <li>Alignment to school strategic plan and AITSL / accreditation requirements</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <div class="service-title">AI Adoption &amp; Governance</div>
+        <p class="service-desc">Helping schools move from reactive to intentional on artificial intelligence — before the policy is needed, not after the incident. Framework-first, community-facing, and built around your school's values rather than a generic template.</p>
+        <ul class="service-list">
+          <li>AI acceptable use policy development</li>
+          <li>Staff capability uplift and professional learning design</li>
+          <li>Parent and community communication frameworks</li>
+          <li>Tool evaluation and procurement guidance</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🛡️</div>
+        <div class="service-title">Cyber Security for Schools</div>
+        <p class="service-desc">Board-ready cyber security that protects your community without requiring a technical background to understand. Risk reporting, incident response, and a governance model that keeps leadership informed and empowered — not overwhelmed.</p>
+        <ul class="service-list">
+          <li>Cyber security posture review and gap analysis</li>
+          <li>Board and leadership risk reporting frameworks</li>
+          <li>Incident response protocol development</li>
+          <li>Staff phishing simulation and awareness programs</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <div class="service-title">Technology Team Transformation</div>
+        <p class="service-desc">Taking a technology team from reactive help-desk to trusted strategic partner. Structural, cultural, and operational change — with measurable service outcomes that staff and leadership can see and feel.</p>
+        <ul class="service-list">
+          <li>Team structure and role redesign</li>
+          <li>Service catalogue and delivery model development</li>
+          <li>Performance frameworks and KPI design</li>
+          <li>Leadership coaching for technology managers</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎓</div>
+        <div class="service-title">Digital Literacy &amp; Professional Learning</div>
+        <p class="service-desc">Building genuine digital confidence in teaching staff — not just tool training, but the underlying capability to think critically about technology in a classroom context. Programs designed for educators, not IT specialists.</p>
+        <ul class="service-list">
+          <li>Digital literacy needs assessment</li>
+          <li>Term-by-term professional learning programs</li>
+          <li>AI literacy for teachers and support staff</li>
+          <li>Curriculum-integrated technology coaching</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <div class="service-title">Capital Works &amp; Infrastructure Advisory</div>
+        <p class="service-desc">Technology input at the right point in a building project — not as an afterthought. From early design review through to commissioning and readiness, I help schools get the infrastructure decisions right while there's still time to make them.</p>
+        <ul class="service-list">
+          <li>New building technology design review</li>
+          <li>AV and learning space specifications</li>
+          <li>Infrastructure standards and procurement</li>
+          <li>Technology readiness and commissioning oversight</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ENGAGEMENT MODELS ── -->
+  <section class="fade-up">
+    <div class="section-label">How we can work together</div>
+    <div class="models-grid">
+      <div class="model-cell">
+        <div class="model-name">Strategic Partnership</div>
+        <div class="model-sub">Ongoing · typically 6–12 months</div>
+        <p class="model-body">A sustained working relationship where I become a genuine extension of your leadership team — attending planning sessions, advising on technology decisions as they emerge, and providing continuity across a program of work. Best suited to schools undertaking major strategic change.</p>
+      </div>
+      <div class="model-cell">
+        <div class="model-name">Project Engagement</div>
+        <div class="model-sub">Defined scope · clear deliverables</div>
+        <p class="model-body">A contained engagement with a specific outcome — a completed strategy, a finished framework, a delivered program. Clear scope, clear timeline, and a defined handover point. Good for schools that know what they need and want to move quickly.</p>
+      </div>
+      <div class="model-cell">
+        <div class="model-name">Advisory &amp; Review</div>
+        <div class="model-sub">Lighter touch · specific questions</div>
+        <p class="model-body">For schools that don't need a full engagement but want an experienced perspective on a specific decision — a technology purchase, a policy review, a board presentation. A smaller commitment, but the same quality of thinking.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW I WORK ── -->
+  <section class="fade-up">
+    <div class="section-label">How I actually work</div>
+    <div class="principles-list">
+      <div class="principle-item">
+        <div class="p-num">01</div>
+        <div>
+          <div class="p-title">I tell you what I actually think</div>
+          <p class="p-body">Including when it's uncomfortable. A consultant who validates every decision you've already made is not worth paying for. I'm here to make your thinking sharper — which sometimes means telling you what you don't want to hear, with enough respect to make it land without softening it into uselessness.</p>
+        </div>
+      </div>
+      <div class="principle-item">
+        <div class="p-num">02</div>
+        <div>
+          <div class="p-title">I work in your context, not mine</div>
+          <p class="p-body">Every school is different. I don't arrive with a template and a timeline. I invest time upfront understanding your community, your culture, and the specific constraints you're working within — and everything I build reflects that context.</p>
+        </div>
+      </div>
+      <div class="principle-item">
+        <div class="p-num">03</div>
+        <div>
+          <div class="p-title">I build things that last</div>
+          <p class="p-body">The measure of a good engagement isn't how well I performed — it's how well your school performs after I leave. Everything I design is documented, embedded, and owned by your team. Dependency on the consultant is a failure mode, not a business model.</p>
+        </div>
+      </div>
+      <div class="principle-item">
+        <div class="p-num">04</div>
+        <div>
+          <div class="p-title">No sales pitch. No obligation.</div>
+          <p class="p-body">If we have an initial conversation and it becomes clear I'm not the right fit for what you need, I'll tell you that too — and I'll tell you who might be. I'd rather have a short honest conversation than a long unhelpful engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section>
+    <div class="callout accent" style="text-align: center; border-left: none; border-top: 3px solid var(--accent-bdr);">
+      <strong>Ready to have a conversation?</strong><br>
+      No obligation, no sales pitch. Tell me what you're working on and we'll see if there's a good fit.<br><br>
+      <a href="contact.html" class="btn btn-primary" style="display: inline-flex; margin: 0 auto;">Get in touch</a>
+      &nbsp;
+      <a href="work.html" class="btn btn-secondary" style="display: inline-flex; margin: 0 auto;">See work examples</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
+    <span>
+      <a href="mailto:adamwollins@me.com">adamwollins@me.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/adamwollins" target="_blank" rel="noopener">LinkedIn</a>
+      &nbsp;·&nbsp;
+      <a href="https://thenextword.com.au" target="_blank" rel="noopener">The Next Word</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

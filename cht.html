@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Humane Technology — Adam Wollins. My alignment with the Centre for Humane Technology and why it shapes every technology decision I make in schools.">
+<title>Humane Technology — Adam Wollins</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 3rem;
+}
+.page-header .eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+.page-header h1 { max-width: 620px; margin-bottom: 1rem; }
+.page-header .lead { font-size: 1.02rem; color: var(--text2); max-width: 560px; line-height: 1.75; }
+
+/* Principles grid */
+.principles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.principle-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.5rem;
+  transition: box-shadow 0.18s, border-color 0.18s;
+}
+.principle-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  border-color: var(--accent-bdr);
+}
+.principle-num {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  opacity: 0.7;
+}
+.principle-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+.principle-body {
+  font-size: 0.87rem;
+  color: var(--text2);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Alignment section */
+.alignment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.alignment-item {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.alignment-item:last-child { border-bottom: none; }
+.ai-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+.ai-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.ai-body { font-size: 0.87rem; color: var(--text2); line-height: 1.65; margin: 0; }
+
+/* Resources */
+.resources-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.resource-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
+}
+.resource-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  border-color: var(--accent-bdr);
+}
+.resource-band {
+  height: 4px;
+  background: linear-gradient(90deg, #2c5fa8, #5a87d0);
+  flex-shrink: 0;
+}
+.resource-body {
+  padding: 1.25rem 1.35rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.resource-type {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-text);
+}
+.resource-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.resource-desc {
+  font-size: 0.84rem;
+  color: var(--text2);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+.resource-footer {
+  padding: 0.7rem 1.35rem 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.resource-source {
+  font-size: 0.72rem;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.resource-link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--blue-text);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.resource-link::after { content: '↗'; font-size: 0.7rem; }
+
+/* CHT banner */
+.cht-banner {
+  background: var(--blue-bg);
+  border: 1px solid var(--blue-bdr);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+.cht-logo-block {
+  flex-shrink: 0;
+  background: white;
+  border: 1px solid var(--blue-bdr);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  text-align: center;
+  min-width: 5rem;
+}
+.cht-abbr {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--blue-text);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+.cht-abbr-sub {
+  font-size: 0.6rem;
+  color: var(--blue-text);
+  opacity: 0.7;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+.cht-text-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--blue-text);
+  margin-bottom: 0.4rem;
+}
+.cht-text-body {
+  font-size: 0.87rem;
+  color: var(--text2);
+  line-height: 1.65;
+  margin-bottom: 0.6rem;
+}
+.cht-text-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--blue-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--blue-bdr);
+  padding-bottom: 1px;
+  transition: color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.cht-text-link:hover { color: #1a3d7a; }
+.cht-text-link::after { content: '↗'; font-size: 0.72rem; }
+
+@media (max-width: 640px) {
+  .principles-grid { grid-template-columns: 1fr; }
+  .resources-grid  { grid-template-columns: 1fr; }
+  .cht-banner      { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Adam <span>Wollins</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">How I Lead</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="work.html">Work Examples</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="ict-strategy.html">ICT Strategy</a></li>
+      <li><a href="substack.html">Writing</a></li>
+      <li><a href="cht.html" class="active">CHT</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <a href="contact.html" class="btn nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <header class="page-header fade-up">
+    <div class="eyebrow">Humane Technology</div>
+    <h1>Technology should serve people. Not the other way around.</h1>
+    <p class="lead">My involvement with the Centre for Humane Technology isn't an add-on to my work in schools — it is foundational to it. The questions they ask are the questions every technology leader in education should be asking, and rarely are.</p>
+  </header>
+
+  <!-- ── ABOUT CHT ── -->
+  <section class="fade-up delay-1">
+    <div class="section-label">About the Centre for Humane Technology</div>
+    <div class="cht-banner">
+      <div class="cht-logo-block">
+        <div class="cht-abbr">CHT</div>
+        <div class="cht-abbr-sub">Centre for<br>Humane<br>Technology</div>
+      </div>
+      <div>
+        <div class="cht-text-title">Driving a humane future with technology that supports our wellbeing</div>
+        <p class="cht-text-body">The Centre for Humane Technology is an independent nonprofit working to drive a fundamental shift in the way technology is designed, deployed, and governed — with a particular focus on the harms caused by attention-extracting platforms, social media, and artificial intelligence. Their work spans policy advocacy, public education, research, and direct engagement with technology builders, governments, and communities.</p>
+        <p class="cht-text-body">CHT is the organisation behind the documentary <em>The Social Dilemma</em>, the <em>Your Undivided Attention</em> podcast, and some of the most incisive published thinking on the relationship between technology and human flourishing — particularly for young people.</p>
+        <a href="https://www.humanetech.com" target="_blank" rel="noopener" class="cht-text-link">Visit humanetech.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY IT MATTERS IN SCHOOLS ── -->
+  <section class="fade-up delay-2">
+    <div class="section-label">Why this matters in a school context</div>
+    <div class="callout blue" style="margin-bottom: 1.5rem;">
+      Schools are not neutral environments when it comes to technology. Every device we deploy, every platform we adopt, every AI tool we introduce is making a set of choices — about student attention, about data, about what we believe education is for. Most of those choices are made without anyone in the school asking whether the technology serves students, or whether students are serving the technology.
+    </div>
+    <div class="principles-grid">
+
+      <div class="principle-card">
+        <div class="principle-num">The attention problem</div>
+        <div class="principle-title">Technology that fights for students' attention</div>
+        <p class="principle-body">Many of the tools schools adopt are designed, at their core, to maximise engagement — which in a commercial context means maximising time on platform. In an educational context, the thing most worth protecting is a student's capacity for sustained, independent attention. These two objectives are in direct conflict. The question is not whether schools notice — it's whether they act on what they notice.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-num">The data problem</div>
+        <div class="principle-title">Whose data, and for whose benefit?</div>
+        <p class="principle-body">The majority of EdTech platforms operate on data models that were designed for consumer markets, not for minors in a duty-of-care relationship with an institution. When a school adopts a platform, it is frequently consenting — on behalf of students and families — to data practices that most parents never read and many wouldn't accept if they did. This is a governance failure that starts with the technology adoption process, not with the platforms themselves.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-num">The AI problem</div>
+        <div class="principle-title">Adopting AI without asking the right questions</div>
+        <p class="principle-body">The pressure on schools to adopt AI is enormous and growing. Most of that pressure comes from the technology sector, not from educational evidence. Schools that respond reactively — adopting tools because they're visible, because other schools are using them, or because a vendor made a compelling presentation — are making decisions that will shape students' intellectual development without having answered the first question: what problem are we actually trying to solve?</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-num">The governance problem</div>
+        <div class="principle-title">Decisions made by default</div>
+        <p class="principle-body">In most schools, technology adoption happens through a combination of individual teacher initiative, vendor relationships, and IT department capability. Very few schools have a formal process for asking whether a technology aligns with their educational values before adopting it. The result is a digital environment shaped by procurement decisions, not by educational ones. The Education Application Review Board I built at Hills Grammar was a direct response to this problem.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── MY ALIGNMENT ── -->
+  <section class="fade-up">
+    <div class="section-label">How CHT values shape my work</div>
+    <div class="alignment-list">
+
+      <div class="alignment-item">
+        <div class="ai-icon">🎯</div>
+        <div>
+          <div class="ai-title">Purpose before adoption</div>
+          <p class="ai-body">Before I recommend, approve, or procure any technology for a school, I ask what problem it solves — for students and teachers, not for administrators or vendors. This is a direct application of the CHT principle that technology should serve human flourishing, not the other way around. It sounds obvious. It is almost never the default.</p>
+        </div>
+      </div>
+
+      <div class="alignment-item">
+        <div class="ai-icon">🔬</div>
+        <div>
+          <div class="ai-title">Evidence over novelty</div>
+          <p class="ai-body">The EdTech market is driven by novelty cycles, not by educational evidence. I bring a deliberate scepticism to new tools and platforms — one grounded in CHT's research on the gap between technology's promises and its documented effects. Shiny is not a governance standard. Evidence is.</p>
+        </div>
+      </div>
+
+      <div class="alignment-item">
+        <div class="ai-icon">🛡️</div>
+        <div>
+          <div class="ai-title">Children deserve higher standards</div>
+          <p class="ai-body">The fact that a technology is legal, popular, or widely adopted does not make it appropriate for children. CHT's work on youth and technology — particularly their research on social media, attention, and mental health — has hardened my view that schools must hold platforms to a higher standard than the general consumer market does. We are in a duty-of-care relationship. That creates obligations most schools have not yet fully accepted.</p>
+        </div>
+      </div>
+
+      <div class="alignment-item">
+        <div class="ai-icon">🧭</div>
+        <div>
+          <div class="ai-title">Governance as a values expression</div>
+          <p class="ai-body">How a school governs its technology adoption is a direct expression of what that school values. A school that has no formal process for evaluating whether a tool serves students is implicitly saying that operational convenience matters more than educational integrity. The governance frameworks I build — the Education Application Review Board, the responsible AI policy, the cyber security protocols — are not bureaucratic exercises. They are the institution's values made legible and enforceable.</p>
+        </div>
+      </div>
+
+      <div class="alignment-item">
+        <div class="ai-icon">🤝</div>
+        <div>
+          <div class="ai-title">Community trust is non-negotiable</div>
+          <p class="ai-body">CHT consistently emphasises that technology companies have eroded the social trust required for healthy communities — particularly communities built around young people. In a school context, this means that parents and families must be genuine partners in technology decisions, not recipients of communications written to manage rather than inform them. The AI communication framework I developed at Hills Grammar was built on this premise, and the community response confirmed it was the right approach.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CHT RESOURCES ── -->
+  <section class="fade-up">
+    <div class="section-label">Essential reading from CHT</div>
+    <p style="max-width: 560px; margin-bottom: 1.5rem;">Four CHT publications that have most directly shaped how I think about technology in schools. Each is worth the time of any school leader making technology decisions.</p>
+    <div class="resources-grid">
+
+      <a href="https://www.humanetech.com/youth" class="resource-card" target="_blank" rel="noopener">
+        <div class="resource-band"></div>
+        <div class="resource-body">
+          <div class="resource-type">Research · Youth &amp; Technology</div>
+          <div class="resource-title">Youth and Screens: What the Research Shows</div>
+          <p class="resource-desc">CHT's comprehensive synthesis of research on the relationship between social media, smartphones, and youth mental health — with a focus on the specific mechanisms through which technology affects adolescent development. Essential reading for anyone making decisions about student device use.</p>
+        </div>
+        <div class="resource-footer">
+          <span class="resource-source">humanetech.com</span>
+          <span class="resource-link">Read</span>
+        </div>
+      </a>
+
+      <a href="https://www.humanetech.com/the-ledger" class="resource-card" target="_blank" rel="noopener">
+        <div class="resource-band"></div>
+        <div class="resource-body">
+          <div class="resource-type">Reference · Harms Framework</div>
+          <div class="resource-title">The Ledger of Harms</div>
+          <p class="resource-desc">A structured inventory of documented harms associated with current technology platforms and design patterns — covering attention, mental health, democracy, and more. A useful anchor for governance conversations in schools about which platforms to adopt, restrict, or reject entirely.</p>
+        </div>
+        <div class="resource-footer">
+          <span class="resource-source">humanetech.com</span>
+          <span class="resource-link">Read</span>
+        </div>
+      </a>
+
+      <a href="https://www.humanetech.com/podcast" class="resource-card" target="_blank" rel="noopener">
+        <div class="resource-band"></div>
+        <div class="resource-body">
+          <div class="resource-type">Podcast · Your Undivided Attention</div>
+          <div class="resource-title">AI and the Race to the Top of the Brain</div>
+          <p class="resource-desc">A podcast episode exploring how AI systems are being designed to capture and hold human attention — and what that means for education, for children, and for the institutions responsible for both. The questions raised apply directly to every AI tool adoption decision a school faces.</p>
+        </div>
+        <div class="resource-footer">
+          <span class="resource-source">humanetech.com/podcast</span>
+          <span class="resource-link">Listen</span>
+        </div>
+      </a>
+
+      <a href="https://www.humanetech.com/fundamentals" class="resource-card" target="_blank" rel="noopener">
+        <div class="resource-band"></div>
+        <div class="resource-body">
+          <div class="resource-type">Framework · Design &amp; Ethics</div>
+          <div class="resource-title">Foundations of Humane Technology</div>
+          <p class="resource-desc">CHT's framework for evaluating technology against humane design principles — covering attention, agency, wellbeing, and democratic values. A practical tool for school leaders building technology governance frameworks that go beyond compliance and toward genuine educational values alignment.</p>
+        </div>
+        <div class="resource-footer">
+          <span class="resource-source">humanetech.com</span>
+          <span class="resource-link">Explore</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section>
+    <div class="callout accent" style="border-left: none; border-top: 3px solid var(--accent-bdr);">
+      <strong>Want to talk about technology governance in your school?</strong><br>
+      The questions the Centre for Humane Technology asks are not abstract. They have immediate, practical implications for how schools adopt AI, manage devices, and communicate with parents. I'm happy to talk through what that looks like in your context.<br><br>
+      <a href="contact.html" class="btn btn-primary" style="display: inline-flex;">Get in touch</a>
+      &nbsp;
+      <a href="https://www.humanetech.com" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-flex;">Visit CHT ↗</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
+    <span>
+      <a href="mailto:adamwollins@me.com">adamwollins@me.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/adamwollins" target="_blank" rel="noopener">LinkedIn</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.humanetech.com" target="_blank" rel="noopener">Centre for Humane Technology</a>
+      &nbsp;·&nbsp;
+      <a href="https://thenextword.com.au" target="_blank" rel="noopener">The Next Word</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

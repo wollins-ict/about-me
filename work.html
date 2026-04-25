@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Work Examples — Adam Wollins. Strategies, governance frameworks, and project artefacts from 25 years of technology leadership in education.">
+<title>Work Examples — Adam Wollins</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── PAGE HEADER ── */
+.page-header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 3rem;
+}
+.page-header .eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+.page-header h1 { max-width: 600px; margin-bottom: 1rem; }
+.page-header .lead { font-size: 1.02rem; color: var(--text2); max-width: 560px; line-height: 1.75; }
+
+/* ── FILTER TABS ── */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+}
+.filter-btn {
+  padding: 0.35rem 0.9rem;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  border: 1px solid var(--border2);
+  background: var(--surface);
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-btn:hover   { border-color: var(--accent-bdr); color: var(--accent); background: var(--accent-bg); }
+.filter-btn.active  { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ── WORK GRID ── */
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ── DOCUMENT CARD ── */
+.doc-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
+  text-decoration: none;
+  color: inherit;
+}
+.doc-card:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+  transform: translateY(-2px);
+  border-color: var(--accent-bdr);
+}
+
+/* Document header band */
+.doc-band {
+  height: 4px;
+  flex-shrink: 0;
+}
+.doc-band.strategy   { background: linear-gradient(90deg, #c96442, #e08b6a); }
+.doc-band.governance { background: linear-gradient(90deg, #2c5fa8, #5a87d0); }
+.doc-band.project    { background: linear-gradient(90deg, #2a6b28, #5aaa57); }
+.doc-band.ai         { background: linear-gradient(90deg, #7c3fa8, #b07ad0); }
+.doc-band.culture    { background: linear-gradient(90deg, #8a6020, #c09050); }
+
+.doc-body {
+  padding: 1.3rem 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.doc-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.doc-type-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.doc-category {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.6rem;
+  border-radius: 99px;
+  border: 1px solid;
+}
+.doc-category.strategy   { color: var(--accent);     background: var(--accent-bg);  border-color: var(--accent-bdr); }
+.doc-category.governance { color: var(--blue-text);  background: var(--blue-bg);    border-color: var(--blue-bdr); }
+.doc-category.project    { color: var(--green-text); background: var(--green-bg);   border-color: var(--green-bdr); }
+.doc-category.ai         { color: #6b2f9b;           background: #f4edfb;           border-color: #d4b3f0; }
+.doc-category.culture    { color: #6b4a10;           background: #fdf5e6;           border-color: #e8c87a; }
+
+.doc-title {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+.doc-context {
+  font-size: 0.78rem;
+  color: var(--text3);
+  font-style: italic;
+}
+.doc-desc {
+  font-size: 0.86rem;
+  color: var(--text2);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+.doc-footer {
+  padding: 0.75rem 1.4rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  margin-top: 0.25rem;
+}
+.doc-file-meta {
+  font-size: 0.72rem;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-bdr);
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.doc-link:hover { color: var(--accent-dark); border-color: var(--accent); }
+.doc-link::after { content: '↗'; font-size: 0.7rem; }
+
+/* ── PENDING CARD (file exists, not yet uploaded) ── */
+.doc-card.pending { cursor: default; }
+.doc-card.pending:hover {
+  box-shadow: none;
+  transform: none;
+  border-color: var(--border2);
+}
+.doc-request {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text3);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border2);
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.doc-request:hover { color: var(--accent); border-color: var(--accent-bdr); }
+.doc-request::after { content: '✉'; font-size: 0.72rem; }
+
+/* ── PLACEHOLDER CARD (future document, not written yet) ── */
+.doc-card.placeholder {
+  border-style: dashed;
+  background: var(--bg2);
+  opacity: 0.55;
+  pointer-events: none;
+}
+.doc-card.placeholder .doc-title { color: var(--text3); }
+.doc-card.placeholder .doc-desc  { color: var(--text3); }
+.placeholder-note {
+  font-size: 0.75rem;
+  color: var(--text3);
+  font-style: italic;
+}
+
+/* ── CATEGORY DIVIDER ── */
+.cat-divider {
+  grid-column: 1 / -1;
+  padding-top: 1rem;
+}
+.cat-divider:first-child { padding-top: 0; }
+
+/* ── HIDDEN (filtered out) ── */
+.doc-card.hidden { display: none; }
+
+@media (max-width: 640px) {
+  .work-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Adam <span>Wollins</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">How I Lead</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="work.html" class="active">Work Examples</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="ict-strategy.html">ICT Strategy</a></li>
+      <li><a href="substack.html">Writing</a></li>
+      <li><a href="cht.html">CHT</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <a href="contact.html" class="btn nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ── PAGE HEADER ── -->
+  <header class="page-header fade-up">
+    <div class="eyebrow">Portfolio</div>
+    <h1>Work that speaks for itself.</h1>
+    <p class="lead">Strategies, governance frameworks, project artefacts, and tools built across 25 years of technology leadership in education. Available to school leaders, boards, and executive teams on request or by direct access below.</p>
+  </header>
+
+  <!-- ── FILTER BAR ── -->
+  <div class="filter-bar fade-up delay-1" id="filterBar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="strategy">Strategy &amp; Vision</button>
+    <button class="filter-btn" data-filter="governance">Governance &amp; Risk</button>
+    <button class="filter-btn" data-filter="project">Project &amp; Program</button>
+    <button class="filter-btn" data-filter="ai">AI &amp; Innovation</button>
+    <button class="filter-btn" data-filter="culture">Team &amp; Culture</button>
+  </div>
+
+  <!-- ── WORK GRID ── -->
+  <section class="fade-up delay-2">
+    <div class="work-grid" id="workGrid">
+
+      <!-- ════════════════════════════
+           HOW TO ADD A FILE
+           ════════════════════════════
+           1. Drop the PDF/XLSX/DOCX into the same folder as these HTML files.
+           2. Change <div class="doc-card pending"> to:
+              <a href="your-filename.pdf" class="doc-card" data-category="CATEGORY" target="_blank" rel="noopener">
+           3. Change the footer from doc-request to doc-link and close with </a> not </div>.
+           ════════════════════════════ -->
+
+      <!-- ─── STRATEGY & VISION ─── -->
+
+      <!-- PENDING: file exists, not yet uploaded — change to <a href="filename.pdf"> when ready -->
+      <div class="doc-card pending" data-category="strategy">
+        <div class="doc-band strategy"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">📋</span>
+            <span class="doc-category strategy">Strategy &amp; Vision</span>
+          </div>
+          <div class="doc-title">True North ICT Strategy 2025–2030</div>
+          <div class="doc-context">Hills Grammar School · 2024</div>
+          <p class="doc-desc">A five-year technology roadmap for an independent K–12 school, built on three pillars: Educational Excellence, Operational Efficiency, and Community Engagement. Includes multi-year investment plans, governance structures, and measurable outcomes aligned to the school's wider strategic plan.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">PDF · Strategy</span>
+          <a href="mailto:adamwollins@me.com?subject=Work%20Example%20Request%3A%20True%20North%20ICT%20Strategy" class="doc-request">Request a copy</a>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: future document, not yet written -->
+      <div class="doc-card placeholder" data-category="strategy">
+        <div class="doc-band strategy"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">📋</span>
+            <span class="doc-category strategy">Strategy &amp; Vision</span>
+          </div>
+          <div class="doc-title">ICT Maturity Assessment Framework</div>
+          <div class="doc-context">Coming soon</div>
+          <p class="doc-desc">A structured framework for evaluating a school's current technology capability across five dimensions — infrastructure, people, governance, pedagogy, and community.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">PDF · Framework</span>
+          <span class="placeholder-note">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- ─── GOVERNANCE & RISK ─── -->
+
+      <div class="doc-card pending" data-category="governance">
+        <div class="doc-band governance"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">🔒</span>
+            <span class="doc-category governance">Governance &amp; Risk</span>
+          </div>
+          <div class="doc-title">Education Application Review Board — Charter &amp; Process</div>
+          <div class="doc-context">Hills Grammar School · 2024</div>
+          <p class="doc-desc">The governance process that filters every proposed technology adoption through educational, pastoral, and risk criteria before approval. Designed to give the board and leadership team visible oversight of technology decisions without slowing down responsible innovation.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">PDF · Governance</span>
+          <a href="mailto:adamwollins@me.com?subject=Work%20Example%20Request%3A%20App%20Review%20Board%20Charter" class="doc-request">Request a copy</a>
+        </div>
+      </div>
+
+      <div class="doc-card pending" data-category="governance">
+        <div class="doc-band governance"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">🛡️</span>
+            <span class="doc-category governance">Governance &amp; Risk</span>
+          </div>
+          <div class="doc-title">Cyber Security Response Protocol</div>
+          <div class="doc-context">Hills Grammar School · 2024</div>
+          <p class="doc-desc">A board-ready incident response framework — covering escalation paths, communication templates, recovery steps, and post-incident review process. Written for school leaders, not technical staff.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">PDF · Framework</span>
+          <a href="mailto:adamwollins@me.com?subject=Work%20Example%20Request%3A%20Cyber%20Security%20Response%20Protocol" class="doc-request">Request a copy</a>
+        </div>
+      </div>
+
+      <div class="doc-card placeholder" data-category="governance">
+        <div class="doc-band governance"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">📊</span>
+            <span class="doc-category governance">Governance &amp; Risk</span>
+          </div>
+          <div class="doc-title">Technology Risk Reporting Template — Board Pack</div>
+          <div class="doc-context">Coming soon</div>
+          <p class="doc-desc">A one-page board reporting template that translates technical risk into plain-language governance language, with traffic-light status indicators and recommended actions.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">DOCX · Template</span>
+          <span class="placeholder-note">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- ─── PROJECT & PROGRAM ─── -->
+
+      <div class="doc-card pending" data-category="project">
+        <div class="doc-band project"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">🗂️</span>
+            <span class="doc-category project">Project &amp; Program</span>
+          </div>
+          <div class="doc-title">Project Governance Framework — Education Portfolio</div>
+          <div class="doc-context">University of Sydney · 2017–2018</div>
+          <p class="doc-desc">The project management methodology developed for the University of Sydney's education technology portfolio — covering project initiation, status reporting, risk and issue management, and stakeholder governance. Standardised across a $16M+ program of works.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">PDF · Framework</span>
+          <a href="mailto:adamwollins@me.com?subject=Work%20Example%20Request%3A%20Project%20Governance%20Framework" class="doc-request">Request a copy</a>
+        </div>
+      </div>
+
+      <a href="taxonomy.html" class="doc-card" data-category="project" target="_blank" rel="noopener">
+        <div class="doc-band project"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">🗺️</span>
+            <span class="doc-category project">Project &amp; Program</span>
+          </div>
+          <div class="doc-title">Taxonomy Mapping — Education Technology Domains</div>
+          <div class="doc-context">NSW Department of Education · 2019–2021</div>
+          <p class="doc-desc">A structured mapping of ICT domains, service categories, and technology capabilities across a large government education environment. Used to establish service ownership, rationalise vendor relationships, and create a shared language between technical teams and school leadership.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">HTML · Reference</span>
+          <span class="doc-link">View document</span>
+        </div>
+      </a>
+
+      <div class="doc-card placeholder" data-category="project">
+        <div class="doc-band project"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">📅</span>
+            <span class="doc-category project">Project &amp; Program</span>
+          </div>
+          <div class="doc-title">ICT Capital Works — Delivery Playbook</div>
+          <div class="doc-context">Coming soon</div>
+          <p class="doc-desc">A repeatable playbook for delivering technology into new or refurbished school buildings — from early design review through to commissioning, handover, and staff readiness.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">PDF · Playbook</span>
+          <span class="placeholder-note">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- ─── AI & INNOVATION ─── -->
+
+      <div class="doc-card pending" data-category="ai">
+        <div class="doc-band ai"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">🤖</span>
+            <span class="doc-category ai">AI &amp; Innovation</span>
+          </div>
+          <div class="doc-title">Responsible AI Policy — School Framework</div>
+          <div class="doc-context">Hills Grammar School · 2024</div>
+          <p class="doc-desc">A values-led AI acceptable use policy for an independent K–12 school — covering staff, students, and parents. Includes tool classification criteria, transparency obligations, and a parent communication approach that received unsolicited commendation from the school community.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">PDF · Policy</span>
+          <a href="mailto:adamwollins@me.com?subject=Work%20Example%20Request%3A%20AI%20Policy" class="doc-request">Request a copy</a>
+        </div>
+      </div>
+
+      <div class="doc-card placeholder" data-category="ai">
+        <div class="doc-band ai"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">🧪</span>
+            <span class="doc-category ai">AI &amp; Innovation</span>
+          </div>
+          <div class="doc-title">AI Tool Evaluation Scorecard</div>
+          <div class="doc-context">Coming soon</div>
+          <p class="doc-desc">A structured scorecard for evaluating AI tools against educational, ethical, security, and value-for-money criteria. Designed for use by school leadership teams — not IT specialists.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">XLSX · Tool</span>
+          <span class="placeholder-note">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- ─── TEAM & CULTURE ─── -->
+
+      <div class="doc-card pending" data-category="culture">
+        <div class="doc-band culture"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">👥</span>
+            <span class="doc-category culture">Team &amp; Culture</span>
+          </div>
+          <div class="doc-title">ICT Service Catalogue — School Edition</div>
+          <div class="doc-context">Hills Grammar School · 2023</div>
+          <p class="doc-desc">A published service catalogue defining what the technology team delivers, to whom, and to what standard — making the ICT team's role legible and accountable to staff and leadership. Part of the team transformation from reactive support to trusted partner.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">PDF · Reference</span>
+          <a href="mailto:adamwollins@me.com?subject=Work%20Example%20Request%3A%20ICT%20Service%20Catalogue" class="doc-request">Request a copy</a>
+        </div>
+      </div>
+
+      <div class="doc-card placeholder" data-category="culture">
+        <div class="doc-band culture"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">📝</span>
+            <span class="doc-category culture">Team &amp; Culture</span>
+          </div>
+          <div class="doc-title">Professional Learning Program — Digital Capability for Staff</div>
+          <div class="doc-context">Coming soon</div>
+          <p class="doc-desc">A term-by-term professional learning program for teaching and support staff — building digital confidence, responsible AI literacy, and classroom technology skills without requiring IT expertise.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">PDF · Program</span>
+          <span class="placeholder-note">Coming soon</span>
+        </div>
+      </div>
+
+
+      <!-- ─── PUBLISHED WORK DOCUMENTS ─── -->
+
+      <div class="cat-divider">
+        <div class="section-label">Published documents</div>
+      </div>
+
+      <a href="DigitalMaturityFramework.html" class="doc-card" data-category="strategy" target="_blank" rel="noopener">
+        <div class="doc-band strategy"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">📊</span>
+            <span class="doc-category strategy">Strategy &amp; Vision</span>
+          </div>
+          <div class="doc-title">Digital Maturity Framework</div>
+          <div class="doc-context">Education Technology · Reference framework</div>
+          <p class="doc-desc">A structured framework for assessing and progressing digital maturity across an education organisation — covering infrastructure, people capability, governance, pedagogy, and community engagement.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">HTML · Framework</span>
+          <span class="doc-link">View document</span>
+        </div>
+      </a>
+
+      <a href="Leadership.html" class="doc-card" data-category="culture" target="_blank" rel="noopener">
+        <div class="doc-band culture"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">👤</span>
+            <span class="doc-category culture">Team &amp; Culture</span>
+          </div>
+          <div class="doc-title">Leadership Profile</div>
+          <div class="doc-context">Adam Wollins · Leadership reference</div>
+          <p class="doc-desc">A detailed leadership profile document — outlining strengths, working style, values, and the leadership approach that underpins two decades of technology leadership in education.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">HTML · Profile</span>
+          <span class="doc-link">View document</span>
+        </div>
+      </a>
+
+      <a href="Operation__AI_Literacy___Authorised_Briefing_Document.html" class="doc-card" data-category="ai" target="_blank" rel="noopener">
+        <div class="doc-band ai"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">🤖</span>
+            <span class="doc-category ai">AI &amp; Innovation</span>
+          </div>
+          <div class="doc-title">Operation AI Literacy — Authorised Briefing Document</div>
+          <div class="doc-context">Hills Grammar School · AI literacy program</div>
+          <p class="doc-desc">The briefing document underpinning the school's AI literacy program — covering program purpose, scope, stakeholder responsibilities, and the communication framework used to bring staff, students, and parents on the journey together.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">HTML · Briefing</span>
+          <span class="doc-link">View document</span>
+        </div>
+      </a>
+
+      <a href="leadership_competencies.html" class="doc-card" data-category="culture" target="_blank" rel="noopener">
+        <div class="doc-band culture"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">🧭</span>
+            <span class="doc-category culture">Team &amp; Culture</span>
+          </div>
+          <div class="doc-title">Leadership Competencies Framework</div>
+          <div class="doc-context">Team development · Reference framework</div>
+          <p class="doc-desc">A competency framework defining the leadership behaviours, capabilities, and standards expected across a technology team — used to guide recruitment, development, and performance conversations.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">HTML · Framework</span>
+          <span class="doc-link">View document</span>
+        </div>
+      </a>
+
+      <a href="nomenclature_editorial.html" class="doc-card" data-category="governance" target="_blank" rel="noopener">
+        <div class="doc-band governance"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">📝</span>
+            <span class="doc-category governance">Governance &amp; Risk</span>
+          </div>
+          <div class="doc-title">Nomenclature &amp; Editorial Standards</div>
+          <div class="doc-context">Communications &amp; governance · Reference</div>
+          <p class="doc-desc">A working reference for consistent naming conventions, editorial standards, and communication language across a school's technology program — reducing ambiguity and improving stakeholder clarity.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">HTML · Reference</span>
+          <span class="doc-link">View document</span>
+        </div>
+      </a>
+
+      <a href="taxonomy-table.html" class="doc-card" data-category="project" target="_blank" rel="noopener">
+        <div class="doc-band project"></div>
+        <div class="doc-body">
+          <div class="doc-meta">
+            <span class="doc-type-icon">📋</span>
+            <span class="doc-category project">Project &amp; Program</span>
+          </div>
+          <div class="doc-title">ICT Taxonomy Table</div>
+          <div class="doc-context">NSW Department of Education · Reference</div>
+          <p class="doc-desc">A structured taxonomy table classifying ICT services, domains, and capabilities — designed to create a shared language between technical and non-technical stakeholders in a large education organisation.</p>
+        </div>
+        <div class="doc-footer">
+          <span class="doc-file-meta">HTML · Reference</span>
+          <span class="doc-link">View document</span>
+        </div>
+      </a>
+
+    </div><!-- /work-grid -->
+  </section>
+
+  <!-- ── CTA ── -->
+  <section>
+    <div class="callout blue">
+      <strong>Would you like to discuss any of this work?</strong> Whether you're looking for something specific, want to understand how a framework was built, or are curious about adapting it for your school — I'm happy to have a conversation.<br><br>
+      <a href="mailto:adamwollins@me.com" class="btn btn-primary" style="display: inline-flex;">adamwollins@me.com</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
+    <span>
+      <a href="mailto:adamwollins@me.com">adamwollins@me.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/adamwollins" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+/* ── FILTER LOGIC ── */
+const filterBar  = document.getElementById('filterBar');
+const allCards   = document.querySelectorAll('.doc-card');
+
+filterBar.addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+
+  // Update active state
+  filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const filter = btn.dataset.filter;
+
+  allCards.forEach(card => {
+    const cat = card.dataset.category;
+    const show = filter === 'all' || cat === filter;
+    card.classList.toggle('hidden', !show);
+  });
+});
+
+/* ── PRINT: expand all ── */
+window.addEventListener('beforeprint', () => {
+  allCards.forEach(c => c.classList.remove('hidden'));
+});
+</script>
+
+</body>
+</html>

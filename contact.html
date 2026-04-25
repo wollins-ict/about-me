@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Get in touch — Adam Wollins. Technology executive and ICT strategist for Australian schools.">
+<title>Contact — Adam Wollins</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 3rem;
+}
+.page-header .eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+.page-header h1 { max-width: 600px; margin-bottom: 1rem; }
+.page-header .lead { font-size: 1.02rem; color: var(--text2); max-width: 560px; line-height: 1.75; }
+
+/* Contact layout */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Contact card */
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact-card .cc-icon { font-size: 1.5rem; margin-bottom: 0.25rem; }
+.contact-card .cc-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 0.15rem;
+}
+.contact-card .cc-value {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--text);
+}
+.contact-card .cc-value a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-bdr);
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.contact-card .cc-value a:hover { color: var(--accent-dark); border-color: var(--accent); }
+.contact-card .cc-note {
+  font-size: 0.83rem;
+  color: var(--text3);
+  line-height: 1.55;
+}
+
+/* Contact grid 2x2 */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* Reasons to reach out */
+.reasons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.reason-item {
+  padding: 1.1rem 0;
+  border-top: 2px solid var(--border2);
+  transition: border-color 0.15s;
+}
+.reason-item:hover { border-color: var(--accent); }
+.reason-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+.reason-body { font-size: 0.85rem; color: var(--text2); line-height: 1.6; margin: 0; }
+
+@media (max-width: 640px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-grid   { grid-template-columns: 1fr; }
+  .reasons-grid   { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Adam <span>Wollins</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">How I Lead</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="work.html">Work Examples</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="ict-strategy.html">ICT Strategy</a></li>
+      <li><a href="substack.html">Writing</a></li>
+      <li><a href="cht.html">CHT</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <a href="contact.html" class="btn nav-cta active">Get in touch</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <header class="page-header fade-up">
+    <div class="eyebrow">Contact</div>
+    <h1>Let's have a conversation.</h1>
+    <p class="lead">Whether you have a specific project in mind, a question about something on this site, or you simply want to explore whether there's a good fit — I'm happy to hear from you. No sales pitch, no obligation.</p>
+  </header>
+
+  <!-- ── CONTACT METHODS ── -->
+  <section class="fade-up delay-1">
+    <div class="section-label">How to reach me</div>
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="cc-icon">✉️</div>
+        <div class="cc-label">Email</div>
+        <div class="cc-value"><a href="mailto:adamwollins@me.com">adamwollins@me.com</a></div>
+        <div class="cc-note">The best way to reach me. I read and respond to every email personally. Expect a reply within one business day.</div>
+      </div>
+
+      <div class="contact-card">
+        <div class="cc-icon">📞</div>
+        <div class="cc-label">Phone</div>
+        <div class="cc-value"><a href="tel:+61400842314">(+61) 400 842 314</a></div>
+        <div class="cc-note">Happy to talk. If I don't pick up, leave a message and I'll call back promptly. Sydney, NSW — AEST / AEDT.</div>
+      </div>
+
+      <div class="contact-card">
+        <div class="cc-icon">💼</div>
+        <div class="cc-label">LinkedIn</div>
+        <div class="cc-value"><a href="https://www.linkedin.com/in/adamwollins" target="_blank" rel="noopener">linkedin.com/in/adamwollins</a></div>
+        <div class="cc-note">Connect, follow along, or send a message through LinkedIn. I'm active on the platform and check messages regularly.</div>
+      </div>
+
+      <div class="contact-card">
+        <div class="cc-icon">📍</div>
+        <div class="cc-label">Location</div>
+        <div class="cc-value">Sydney, NSW, Australia</div>
+        <div class="cc-note">Based in Sydney. Available to work with schools across Australia. Remote engagements and travel arrangements are both possible.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── GOOD REASONS TO REACH OUT ── -->
+  <section class="fade-up">
+    <div class="section-label">Good reasons to reach out</div>
+    <div class="reasons-grid">
+      <div class="reason-item">
+        <div class="reason-title">You're building or reviewing a technology strategy</div>
+        <p class="reason-body">Whether you're starting from scratch or pressure-testing something already underway, I'm happy to have an initial conversation about where you are and what would be useful.</p>
+      </div>
+      <div class="reason-item">
+        <div class="reason-title">You need help thinking through AI in your school</div>
+        <p class="reason-body">Policy, governance, staff capability, parent communication — or just a clearer picture of what you should actually be doing right now. I can help.</p>
+      </div>
+      <div class="reason-item">
+        <div class="reason-title">You're evaluating a technology investment</div>
+        <p class="reason-body">Before you commit budget, it's worth getting a second opinion from someone who doesn't have a vendor relationship. I can help you ask the right questions.</p>
+      </div>
+      <div class="reason-item">
+        <div class="reason-title">Your technology team isn't performing the way you need it to</div>
+        <p class="reason-body">Whether it's culture, structure, or capability — I've done this transformation before. I know what a good technology team looks like, and how to get there from where you are.</p>
+      </div>
+      <div class="reason-item">
+        <div class="reason-title">You're preparing for a board conversation on technology</div>
+        <p class="reason-body">Helping school leaders communicate technology risk and strategy to boards is something I've done at every level, from independent schools to government briefings to Parliament.</p>
+      </div>
+      <div class="reason-item">
+        <div class="reason-title">You're not sure if any of the above applies — but something feels off</div>
+        <p class="reason-body">That's a legitimate reason to reach out. Sometimes the most useful thing I can do is help a school leader name what's actually bothering them about their technology situation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT TO EXPECT ── -->
+  <section class="fade-up">
+    <div class="section-label">What to expect</div>
+    <div class="callout blue">
+      An initial conversation is exactly that — a conversation. I'll ask questions, listen carefully, and give you my honest view of whether I can genuinely help. If there's a good fit, we'll talk about what an engagement might look like. If there isn't, I'll say so clearly — and I'll do my best to point you toward someone who can. No discovery fee. No obligation. No pitch.
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section style="text-align: center;">
+    <a href="mailto:adamwollins@me.com" class="btn btn-primary" style="font-size: 1rem; padding: 0.75rem 2rem;">adamwollins@me.com</a>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
+    <span>
+      <a href="mailto:adamwollins@me.com">adamwollins@me.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/adamwollins" target="_blank" rel="noopener">LinkedIn</a>
+      &nbsp;·&nbsp;
+      <a href="https://thenextword.com.au" target="_blank" rel="noopener">The Next Word</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

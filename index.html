@@ -13,7 +13,6 @@
   border-bottom: 1px solid var(--border2);
   margin-bottom: 3rem;
 }
-
 .hero-eyebrow {
   font-family: var(--font-body);
   font-size: 0.75rem;
@@ -23,12 +22,7 @@
   color: var(--accent);
   margin-bottom: 1rem;
 }
-
-.hero h1 {
-  margin-bottom: 1.1rem;
-  max-width: 640px;
-}
-
+.hero h1 { margin-bottom: 1.1rem; max-width: 640px; }
 .hero-sub {
   font-size: 1.05rem;
   color: var(--text2);
@@ -36,14 +30,12 @@
   max-width: 580px;
   margin-bottom: 2rem;
 }
-
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 2.5rem;
 }
-
 .hero-contact {
   display: flex;
   flex-wrap: wrap;
@@ -90,7 +82,6 @@
   gap: 1rem;
   margin-bottom: 3rem;
 }
-
 .section-card {
   background: var(--surface);
   border: 1px solid var(--border2);
@@ -121,11 +112,7 @@
   border-color: var(--accent-bdr);
 }
 .section-card:hover::after { opacity: 1; transform: translateX(0); }
-
-.section-card .card-icon {
-  font-size: 1.5rem;
-  margin-bottom: 0.2rem;
-}
+.section-card .card-icon { font-size: 1.5rem; margin-bottom: 0.2rem; }
 .section-card .card-title {
   font-family: var(--font-display);
   font-size: 1.15rem;
@@ -168,10 +155,46 @@
 }
 .approach-item p { font-size: 0.85rem; line-height: 1.6; }
 
+/* Strengths preview strip */
+.strengths-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.strength-cell {
+  background: var(--surface);
+  padding: 1.1rem 1rem;
+  text-align: center;
+  transition: background 0.15s;
+}
+.strength-cell:hover { background: var(--accent-bg); }
+.strength-cell .sc-num {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.6;
+  margin-bottom: 0.3rem;
+}
+.strength-cell .sc-name {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.2;
+}
+
 @media (max-width: 640px) {
-  .about-strip   { grid-template-columns: 1fr; }
-  .section-cards { grid-template-columns: 1fr; }
-  .approach-grid { grid-template-columns: 1fr; }
+  .about-strip     { grid-template-columns: 1fr; }
+  .section-cards   { grid-template-columns: 1fr; }
+  .approach-grid   { grid-template-columns: 1fr; }
+  .strengths-strip { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
@@ -183,21 +206,29 @@
     <a href="index.html" class="nav-logo">Adam <span>Wollins</span></a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">How I Lead</a></li>
       <li><a href="cv.html">CV</a></li>
-      <li><a href="ict-strategy.html">ICT Strategy for Schools</a></li>
+      <li><a href="work.html">Work Examples</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="ict-strategy.html">ICT Strategy</a></li>
+      <li><a href="substack.html">Writing</a></li>
+      <li><a href="cht.html">CHT</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
     </ul>
-    <a href="mailto:adamwollins@me.com" class="btn nav-cta">Get in touch</a>
+    <a href="contact.html" class="btn nav-cta">Get in touch</a>
   </div>
 </nav>
 
 <!-- ── HERO ── -->
 <div class="page">
   <header class="hero fade-up">
-    <div class="hero-eyebrow">Technology Executive · ICT Strategist · Education Leader</div>
+    <div class="hero-eyebrow">Technology Executive · Education Leader · Trusted Advisor</div>
     <h1>Helping schools think clearly about technology — and act on it.</h1>
-    <p class="hero-sub">I'm Adam Wollins. For over 26 years I've led technology strategy, transformation, and operations across education — from individual schools to the largest education IT department in the Southern Hemisphere. I work alongside school leadership as a trusted partner, not a vendor.</p>
+    <p class="hero-sub">I'm Adam Wollins. For over 25 years I've led technology strategy, transformation, and operations across education — from individual schools to the largest education IT operation in the Southern Hemisphere. I work alongside school leadership as a genuine partner: in the room, in the detail, and accountable to your community.</p>
     <div class="hero-actions">
-      <a href="ict-strategy.html" class="btn btn-primary">ICT Strategy for Schools</a>
+      <a href="consulting.html" class="btn btn-primary">Work with Me</a>
+      <a href="ict-strategy.html" class="btn btn-secondary">ICT Strategy for Schools</a>
+      <a href="about.html" class="btn btn-secondary">How I Lead</a>
       <a href="cv.html" class="btn btn-secondary">View my CV</a>
     </div>
     <div class="hero-contact">
@@ -214,16 +245,16 @@
   <!-- ── STAT STRIP ── -->
   <div class="about-strip fade-up delay-1">
     <div class="about-cell">
-      <div class="num">26+</div>
-      <div class="label">Years leading technology in education &amp; government</div>
+      <div class="num">25+</div>
+      <div class="label">Years leading technology across schools, government, and higher education</div>
     </div>
     <div class="about-cell">
       <div class="num">800K+</div>
-      <div class="label">Students supported across NSW public schools</div>
+      <div class="label">Students supported across NSW public schools during COVID-19 response</div>
     </div>
     <div class="about-cell">
       <div class="num">ELT</div>
-      <div class="label">Executive Leadership Team member at Hills Grammar School</div>
+      <div class="label">Executive Leadership Team member — currently at Hills Grammar School</div>
     </div>
   </div>
 
@@ -232,10 +263,32 @@
     <div class="section-label">What's here</div>
     <div class="section-cards">
 
+      <a href="about.html" class="section-card">
+        <div class="card-icon">🧭</div>
+        <div class="card-title">How I Lead</div>
+        <p class="card-desc">My leadership philosophy, working style, and the five consistent strengths that shape how I think, prepare, and act. For those who want to understand the person behind the career record.</p>
+        <div class="card-tags">
+          <span class="tag accent">Leadership profile</span>
+          <span class="tag">Values</span>
+          <span class="tag">Working style</span>
+        </div>
+      </a>
+
+      <a href="consulting.html" class="section-card">
+        <div class="card-icon">🤝</div>
+        <div class="card-title">Consulting</div>
+        <p class="card-desc">How I work with schools, boards, and leadership teams. Engagement models, services, and what to expect when we work together — no sales pitch, just a clear picture.</p>
+        <div class="card-tags">
+          <span class="tag accent">Services</span>
+          <span class="tag">Engagements</span>
+          <span class="tag">How it works</span>
+        </div>
+      </a>
+
       <a href="cv.html" class="section-card">
         <div class="card-icon">📄</div>
         <div class="card-title">My CV</div>
-        <p class="card-desc">A full professional profile — career history, key achievements, capabilities, and qualifications. For recruiters, principals, and anyone exploring a working relationship.</p>
+        <p class="card-desc">A full professional profile — career history, key achievements, capabilities, and qualifications. For principals, boards, and anyone exploring a working relationship.</p>
         <div class="card-tags">
           <span class="tag">Career history</span>
           <span class="tag">Achievements</span>
@@ -243,10 +296,43 @@
         </div>
       </a>
 
+      <a href="work.html" class="section-card">
+        <div class="card-icon">🗂️</div>
+        <div class="card-title">Work Examples</div>
+        <p class="card-desc">Strategies, governance frameworks, project artefacts, and tools from across 25 years. Real work you can view — from ICT strategy documents to AI governance frameworks.</p>
+        <div class="card-tags">
+          <span class="tag accent">Portfolio</span>
+          <span class="tag">Frameworks</span>
+          <span class="tag">Templates</span>
+        </div>
+      </a>
+
+      <a href="substack.html" class="section-card">
+        <div class="card-icon">✍️</div>
+        <div class="card-title">Writing</div>
+        <p class="card-desc">Thinking out loud on technology, education, and AI — published on Substack. For practitioners who want substance over noise.</p>
+        <div class="card-tags">
+          <span class="tag accent">Substack</span>
+          <span class="tag">Articles</span>
+          <span class="tag">AI & Education</span>
+        </div>
+      </a>
+
+      <a href="cht.html" class="section-card">
+        <div class="card-icon">🌱</div>
+        <div class="card-title">Humane Technology</div>
+        <p class="card-desc">My alignment with the Centre for Humane Technology and why their values are foundational — not optional — in how I approach every technology decision in schools.</p>
+        <div class="card-tags">
+          <span class="tag accent">CHT</span>
+          <span class="tag">Values</span>
+          <span class="tag">Ethics</span>
+        </div>
+      </a>
+
       <a href="ict-strategy.html" class="section-card">
         <div class="card-icon">🏫</div>
         <div class="card-title">ICT Strategy for Schools</div>
-        <p class="card-desc">Services, frameworks, and thinking for school leaders navigating technology strategy, AI adoption, and digital transformation. Articles and resources coming soon.</p>
+        <p class="card-desc">Services, frameworks, and thinking for school leaders navigating technology strategy, AI adoption, and digital change. Built for principals and boards, not IT departments.</p>
         <div class="card-tags">
           <span class="tag accent">Services</span>
           <span class="tag">AI &amp; Schools</span>
@@ -254,33 +340,73 @@
         </div>
       </a>
 
+      <a href="contact.html" class="section-card">
+        <div class="card-icon">✉️</div>
+        <div class="card-title">Get in touch</div>
+        <p class="card-desc">Whether you have a specific project in mind or simply want to explore whether there's a good fit — I'm happy to have a conversation. No sales pitch, no obligation.</p>
+        <div class="card-tags">
+          <span class="tag">adamwollins@me.com</span>
+          <span class="tag">(+61) 400 842 314</span>
+        </div>
+      </a>
+
     </div>
   </section>
 
-  <!-- ── ABOUT ── -->
+  <!-- ── HOW I WORK ── -->
   <section class="fade-up delay-3">
     <div class="section-label">How I work</div>
     <div class="callout blue" style="margin-bottom: 1.5rem;">
-      <strong>I become part of your team.</strong> When I work with a school, I don't arrive with a standard playbook and leave with a report. I sit alongside your leadership, understand your community, and build something that is genuinely yours — strategy, capability, culture, and all.
+      <strong>I become part of your team.</strong> When I work with a school, I don't arrive with a standard playbook and leave with a report. I sit alongside your leadership, understand your community, and build something that is genuinely yours — strategy, capability, culture, and all. My career started in the classroom. That perspective never leaves the room with me.
     </div>
     <div class="approach-grid">
       <div class="approach-item">
-        <div class="ai-title">Strategic, not just technical</div>
-        <p>Technology decisions in schools are always educational decisions. I work from purpose first, and technology second.</p>
+        <div class="ai-title">Purpose before technology</div>
+        <p>Every technology decision in a school is also an educational decision. I start with your values and your vision — and technology follows from that, not the other way around.</p>
       </div>
       <div class="approach-item">
-        <div class="ai-title">Trusted, not transactional</div>
-        <p>I build real relationships with school leadership — the kind where you call me when something unexpected happens, not just when the project is running.</p>
+        <div class="ai-title">Honest, not reassuring</div>
+        <p>I would rather tell you something uncomfortable and useful than something polished and hollow. Good thinking partners tell you what you need to hear — not what you want to hear.</p>
       </div>
       <div class="approach-item">
-        <div class="ai-title">Practical, not theoretical</div>
-        <p>Everything I bring has been tested in real schools and real government departments. No ivory tower frameworks. Just things that work.</p>
+        <div class="ai-title">Built to last</div>
+        <p>Everything I build is designed to outlast my involvement. Strategies, frameworks, capability — all of it is documented, embedded, and owned by your team long after the engagement ends.</p>
       </div>
     </div>
   </section>
 
-  <!-- ── CURRENT ROLE ── -->
+  <!-- ── STRENGTHS PREVIEW ── -->
   <section class="fade-up delay-4">
+    <div class="section-label">Leadership strengths</div>
+    <div class="strengths-strip">
+      <div class="strength-cell">
+        <div class="sc-num">01</div>
+        <div class="sc-name">Deep Thinker</div>
+      </div>
+      <div class="strength-cell">
+        <div class="sc-num">02</div>
+        <div class="sc-name">Activator</div>
+      </div>
+      <div class="strength-cell">
+        <div class="sc-num">03</div>
+        <div class="sc-name">Achiever</div>
+      </div>
+      <div class="strength-cell">
+        <div class="sc-num">04</div>
+        <div class="sc-name">Connector</div>
+      </div>
+      <div class="strength-cell">
+        <div class="sc-num">05</div>
+        <div class="sc-name">High Standards</div>
+      </div>
+    </div>
+    <p style="font-size: 0.85rem; color: var(--text3); text-align: center;">
+      <a href="about.html" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-bdr);">Read the full leadership profile →</a>
+    </p>
+  </section>
+
+  <!-- ── CURRENT ROLE ── -->
+  <section class="fade-up">
     <div class="section-label">Currently</div>
     <div class="card">
       <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
@@ -288,9 +414,9 @@
           <h3 style="font-size: 1.05rem; margin-bottom: 0.15rem;">Director of Information Technology</h3>
           <div style="font-family: var(--font-display); font-style: italic; color: var(--accent); font-size: 0.95rem;">Hills Grammar School</div>
         </div>
-        <span class="tag accent">ELT Member · 2023 – Present</span>
+        <span class="tag accent">ELT Member · July 2023 – Present</span>
       </div>
-      <p>Leading a team of 8 across DevOps, IT PMO, and operational support. Author of the school's <strong>True North ICT Strategy 2025–2030</strong> — a three-pillar roadmap built around educational outcomes, operational efficiency, and community engagement. Currently leading AI capability programs, cyber security uplift, and capital works technology delivery.</p>
+      <p>Leading a team of 8 across all areas of school technology. I authored the school's <strong>True North ICT Strategy 2025–2030</strong> — a three-pillar roadmap built around educational excellence, operational efficiency, and community engagement. I have since led the school's AI adoption program, strengthened its cyber security posture, and transformed the technology team from a reactive support function into a trusted strategic partner for staff, students, and families.</p>
     </div>
   </section>
 
@@ -299,11 +425,13 @@
 <!-- ── FOOTER ── -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <span>© 2025 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
+    <span>© 2026 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
     <span>
       <a href="mailto:adamwollins@me.com">adamwollins@me.com</a>
       &nbsp;·&nbsp;
       <a href="https://www.linkedin.com/in/adamwollins" target="_blank" rel="noopener">LinkedIn</a>
+      &nbsp;·&nbsp;
+      <a href="https://thenextword.com.au" target="_blank" rel="noopener">The Next Word</a>
     </span>
   </div>
 </footer>

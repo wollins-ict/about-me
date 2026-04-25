@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How I lead — Adam Wollins. Leadership philosophy, strengths, and what people experience when we work together.">
+<title>How I Lead — Adam Wollins</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── ABOUT-SPECIFIC ── */
+.page-header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 3rem;
+}
+.page-header .eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+.page-header h1 { max-width: 600px; margin-bottom: 1rem; }
+.page-header .lead { font-size: 1.02rem; color: var(--text2); max-width: 560px; line-height: 1.75; }
+
+/* Strengths grid */
+.strengths-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.strength-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.5rem;
+  transition: box-shadow 0.18s, border-color 0.18s;
+  position: relative;
+}
+.strength-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  border-color: var(--accent-bdr);
+}
+.strength-number {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  opacity: 0.7;
+}
+.strength-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+  letter-spacing: -0.01em;
+}
+.strength-plain {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 0.65rem;
+  font-family: var(--font-display);
+  font-weight: 300;
+}
+.strength-desc {
+  font-size: 0.88rem;
+  color: var(--text2);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* "In practice" full-width card */
+.strength-card.wide {
+  grid-column: 1 / -1;
+}
+
+/* What people say grid */
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.experience-item {
+  padding: 1.1rem 0;
+  border-top: 2px solid var(--border2);
+  transition: border-color 0.15s;
+}
+.experience-item:hover { border-color: var(--accent); }
+.experience-item .ei-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+.experience-item p { font-size: 0.86rem; line-height: 1.6; margin: 0; }
+
+/* Roots section */
+.roots-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.root-item {
+  display: flex;
+  gap: 1rem;
+}
+.root-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.root-title {
+  font-family: var(--font-display);
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.root-body { font-size: 0.86rem; color: var(--text2); line-height: 1.65; margin: 0; }
+
+/* Values strip */
+.values-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+.value-cell {
+  background: var(--surface);
+  padding: 1.2rem 1.25rem;
+}
+.value-cell .v-label {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+.value-cell .v-body {
+  font-size: 0.82rem;
+  color: var(--text3);
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .strengths-grid    { grid-template-columns: 1fr; }
+  .strength-card.wide { grid-column: auto; }
+  .experience-grid   { grid-template-columns: 1fr; }
+  .roots-grid        { grid-template-columns: 1fr; }
+  .values-strip      { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Adam <span>Wollins</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">How I Lead</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="work.html">Work Examples</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="ict-strategy.html">ICT Strategy</a></li>
+      <li><a href="substack.html">Writing</a></li>
+      <li><a href="cht.html">CHT</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <a href="contact.html" class="btn nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ── PAGE HEADER ── -->
+  <header class="page-header fade-up">
+    <div class="eyebrow">Leadership profile</div>
+    <h1>How I lead. How I think. What drives me.</h1>
+    <p class="lead">A career summary tells you what someone has done. This page tells you how I work — the values, instincts, and ways of thinking that shape every role I step into.</p>
+  </header>
+
+  <!-- ── OPENING CALLOUT ── -->
+  <section class="fade-up delay-1">
+    <div class="callout blue">
+      <strong>I started my career as a teacher.</strong> Before I was a technology leader, I stood in classrooms, wrote lesson plans, and learned the most important thing this work has to teach: that everything you build must serve people first — particularly young people. That perspective has never left me, and it shapes every decision I make.
+    </div>
+  </section>
+
+  <!-- ── MY STRENGTHS ── -->
+  <section class="fade-up delay-2">
+    <div class="section-label">What I bring to a team</div>
+    <p style="margin-bottom: 1.5rem; max-width: 600px;">My leadership profile is shaped by five consistent themes — the way I naturally think, respond, and perform at my best. These aren't aspirational values; they're observable patterns that people who work with me tend to notice quickly.</p>
+
+    <div class="strengths-grid">
+
+      <div class="strength-card">
+        <div class="strength-number">Strength 01</div>
+        <div class="strength-name">Thinker</div>
+        <div class="strength-plain">"I think deeply before I move."</div>
+        <p class="strength-desc">I am genuinely introspective. Before acting on a problem, I want to understand it properly — not just the surface issue, but the context, the history, and the second-order effects. I prepare carefully, read widely, and bring more depth to conversations than people often expect. In a school context, this means I rarely arrive with a generic answer. I arrive with your answer.</p>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-number">Strength 02</div>
+        <div class="strength-name">Activator</div>
+        <div class="strength-plain">"But when it's time to move, I move."</div>
+        <p class="strength-desc">Once a decision is made, I am action-oriented to a fault. I believe that nothing reveals the true shape of a problem like actually starting to solve it. I have a low tolerance for endless debate that substitutes for progress. I move ideas from the talking stage to the action stage, and I bring others with me — not through pressure, but through energy and visible progress.</p>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-number">Strength 03</div>
+        <div class="strength-name">Achiever</div>
+        <div class="strength-plain">"I don't clock off until the work is done."</div>
+        <p class="strength-desc">I carry a persistent internal drive to produce results. Not just to get things across the line, but to get them across the line well. I set high expectations for myself and for my team, and I am genuinely restless when effort isn't matched by outcomes. In 25 years of technology leadership, this has never once produced a project I was embarrassed by — it has produced many I'm proud of.</p>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-number">Strength 04</div>
+        <div class="strength-name">Connector</div>
+        <div class="strength-plain">"I see how everything fits together."</div>
+        <p class="strength-desc">I am particularly attuned to how things connect — how a decision in one part of a school ripples into another, how the technology in a classroom reflects (or undermines) the values in a school's strategic plan, how a teacher's frustration is often a signal about a systemic gap that leadership hasn't yet named. This awareness makes me a better strategic partner than a typical IT director, because I see the full picture.</p>
+      </div>
+
+      <div class="strength-card wide">
+        <div class="strength-number">Strength 05</div>
+        <div class="strength-name">High Standards</div>
+        <div class="strength-plain">"I hold myself — and my work — to the highest benchmark I know."</div>
+        <p class="strength-desc">I am competitive, but not with other people. I am competitive with the standard of my own previous work. I want every strategy I write to be better than my last one. Every team I lead to be stronger than the one before. Every school I partner with to receive something they couldn't have built without me. This isn't ego — it's the internal accountability that keeps my work honest.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── WHAT PEOPLE EXPERIENCE ── -->
+  <section class="fade-up">
+    <div class="section-label">What working with me looks like</div>
+    <div class="experience-grid">
+
+      <div class="experience-item">
+        <div class="ei-title">You get a thinking partner, not a vendor</div>
+        <p>I work alongside leadership as a genuine collaborator. I bring opinions, challenge assumptions, and tell you what I actually think — including when I disagree. I'm not here to validate decisions that have already been made.</p>
+      </div>
+
+      <div class="experience-item">
+        <div class="ei-title">You get honesty, not comfort</div>
+        <p>I would rather tell you something uncomfortable and useful than something reassuring and useless. Principals and boards consistently tell me that my directness — delivered with care — is one of the most useful things I bring to a leadership team.</p>
+      </div>
+
+      <div class="experience-item">
+        <div class="ei-title">You get energy, not inertia</div>
+        <p>Teams I lead don't wait for permission to improve things. They know what direction we're heading, why it matters, and what good looks like when we get there. That clarity creates momentum — and momentum is contagious.</p>
+      </div>
+
+      <div class="experience-item">
+        <div class="ei-title">You get someone who understands school culture</div>
+        <p>I've worked in and around schools my entire career. I understand term pressures, staff change fatigue, parent expectations, and the particular complexity of asking teachers to change how they work. I don't steamroll school culture — I work within it.</p>
+      </div>
+
+      <div class="experience-item">
+        <div class="ei-title">You get deep preparation</div>
+        <p>I never walk into a meeting underprepared. Before any significant engagement — a board presentation, a leadership workshop, a principal conversation — I know your school, your community, and your strategic context. I bring that preparation visibly.</p>
+      </div>
+
+      <div class="experience-item">
+        <div class="ei-title">You get follow-through</div>
+        <p>I do not write strategies and disappear. The outcomes I'm most proud of were built over months and years of sustained attention — not handed over in a glossy document and abandoned at the door.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ROOTS ── -->
+  <section class="fade-up">
+    <div class="section-label">Where this all started</div>
+    <div class="callout" style="margin-bottom: 1.5rem;">
+      Most technology leaders arrive at education from industry. I arrived the other way — through classrooms, staffrooms, and a genuine belief that the best thing technology can do for a school is to quietly get out of the way and let great teaching happen.
+    </div>
+    <div class="roots-grid">
+
+      <div class="root-item">
+        <div class="root-icon">🎓</div>
+        <div>
+          <div class="root-title">I started as a teacher</div>
+          <p class="root-body">My career in education began in the classroom — teaching Information Technology in TAFE NSW from 2000 to 2003. Before I ever managed a technology project, I understood what it meant to stand in front of a class and make something complicated feel simple. That experience shapes how I design professional learning, communicate with staff, and approach change in schools.</p>
+        </div>
+      </div>
+
+      <div class="root-item">
+        <div class="root-icon">🏫</div>
+        <div>
+          <div class="root-title">I grew up in the public system</div>
+          <p class="root-body">More than a decade of my career was spent in NSW Department of Education and TAFE NSW — working directly with school communities, principals, and teachers. I understand the particular pressures, constraints, and values of Australian public education. That context is never far from the surface when I work in independent schools.</p>
+        </div>
+      </div>
+
+      <div class="root-item">
+        <div class="root-icon">🌏</div>
+        <div>
+          <div class="root-title">I've seen technology at every scale</div>
+          <p class="root-body">From supporting individual school sites to coordinating ICT operations for 2,200+ schools and 800,000 students, I've seen what works at every scale. I bring that breadth of perspective to every school I work with — so you benefit from what larger organisations learned expensively, without having to learn it yourself.</p>
+        </div>
+      </div>
+
+      <div class="root-item">
+        <div class="root-icon">🤝</div>
+        <div>
+          <div class="root-title">I believe in the human side of technology</div>
+          <p class="root-body">Technology only creates value when people actually use it — willingly, confidently, and in ways that genuinely help them. That means the change management, the communication, the professional learning, and the listening are just as important as the infrastructure itself. I've never forgotten that.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── WHAT I VALUE ── -->
+  <section class="fade-up">
+    <div class="section-label">What I value in leadership</div>
+    <div class="values-strip">
+      <div class="value-cell">
+        <div class="v-label">Honesty</div>
+        <div class="v-body">Not honesty as a virtue, but honesty as a working method. Relationships built on truth are more durable than relationships built on comfort.</div>
+      </div>
+      <div class="value-cell">
+        <div class="v-label">Purpose first</div>
+        <div class="v-body">Technology choices are educational choices. Every decision should be legible through the lens of: does this serve our students and our community?</div>
+      </div>
+      <div class="value-cell">
+        <div class="v-label">Follow-through</div>
+        <div class="v-body">Ambition without execution is just noise. I care about the things that actually get done, and the people affected by them.</div>
+      </div>
+      <div class="value-cell">
+        <div class="v-label">Connection</div>
+        <div class="v-body">Silos are the enemy of good school technology. The best outcomes come from bringing the right people together, not from working alone in a server room.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section>
+    <div class="callout accent" style="text-align: center; border-left: none; border-top: 3px solid var(--accent-bdr);">
+      <strong>Want to see the career record behind the leadership profile?</strong><br>
+      The CV sets out 25 years of roles, achievements, and qualifications in full.<br><br>
+      <a href="cv.html" class="btn btn-primary" style="display: inline-flex; margin: 0 auto;">View my CV</a>
+      &nbsp;
+      <a href="mailto:adamwollins@me.com" class="btn btn-secondary" style="display: inline-flex; margin: 0 auto;">Get in touch</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
+    <span>
+      <a href="mailto:adamwollins@me.com">adamwollins@me.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/adamwollins" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

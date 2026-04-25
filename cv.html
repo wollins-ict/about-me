@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Adam Wollins — CV. Technology executive with 26+ years leading ICT strategy and transformation in education and government.">
+<meta name="description" content="Adam Wollins — CV. Technology executive with 24+ years leading technology strategy and transformation in education and government.">
 <title>CV — Adam Wollins</title>
 <link rel="stylesheet" href="style.css">
 <style>
@@ -53,6 +53,36 @@
   color: var(--text2);
 }
 .cap-item::before { content: '✓'; color: var(--accent); font-weight: 600; flex-shrink: 0; }
+
+/* Leadership profile strip */
+.leadership-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+.ls-cell {
+  background: var(--surface);
+  padding: 0.9rem 0.85rem;
+  text-align: center;
+}
+.ls-cell .ls-name {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+}
+.ls-cell .ls-plain {
+  font-size: 0.72rem;
+  color: var(--text3);
+  line-height: 1.4;
+}
 
 /* Timeline */
 .timeline { position: relative; }
@@ -132,9 +162,10 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
 .qual-col h3 { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text3); margin-bottom: 0.75rem; font-family: var(--font-body); }
 
 @media (max-width: 600px) {
-  .caps-grid { grid-template-columns: 1fr; }
-  .qual-grid { grid-template-columns: 1fr; }
-  .tl-date   { margin-left: 0; }
+  .caps-grid        { grid-template-columns: 1fr; }
+  .qual-grid        { grid-template-columns: 1fr; }
+  .leadership-strip { grid-template-columns: 1fr 1fr; }
+  .tl-date          { margin-left: 0; }
 }
 </style>
 </head>
@@ -145,10 +176,16 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
     <a href="index.html" class="nav-logo">Adam <span>Wollins</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">How I Lead</a></li>
       <li><a href="cv.html" class="active">CV</a></li>
-      <li><a href="ict-strategy.html">ICT Strategy for Schools</a></li>
+      <li><a href="work.html">Work Examples</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="ict-strategy.html">ICT Strategy</a></li>
+      <li><a href="substack.html">Writing</a></li>
+      <li><a href="cht.html">CHT</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
     </ul>
-    <a href="mailto:adamwollins@me.com" class="btn nav-cta">Get in touch</a>
+    <a href="contact.html" class="btn nav-cta">Get in touch</a>
   </div>
 </nav>
 
@@ -157,7 +194,7 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
   <!-- ── CV HEADER ── -->
   <header class="cv-header fade-up">
     <div class="cv-name">Adam Wollins</div>
-    <div class="cv-tagline">Technology Executive &amp; ICT Strategy Leader</div>
+    <div class="cv-tagline">Director of Technology &amp; Education Strategy Leader</div>
     <div class="cv-contact">
       <a href="mailto:adamwollins@me.com">adamwollins@me.com</a>
       <span>·</span>
@@ -173,7 +210,7 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
   <section class="fade-up delay-1">
     <div class="section-label">Executive Summary</div>
     <div class="callout blue">
-      <strong>Technology executive with 26+ years of experience</strong> leading enterprise-scale technology strategy, platform transformation, and operational excellence across education and government. I lead at the intersection of strategy, operational rigour, and human-centred design — building AI governance frameworks, directing large-scale infrastructure programs, and transforming team culture. My work is anchored in outcomes that matter: for learners, for organisations, and for the people who depend on technology to do their best work.
+      <strong>Technology executive with 25 years of experience</strong> in Australian education — in classrooms, in school leadership, across 2,200+ government schools, and in some of the country's most complex higher education environments. I lead at the place where strategy meets people: developing AI frameworks that staff and parents trust, building teams that move from reactive to proactive, and translating the complexity of modern technology into language that boards, principals, and communities can act on. My work is anchored in one belief: that technology only matters if it makes education better for the people inside a school.
     </div>
   </section>
 
@@ -181,60 +218,104 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
   <section class="fade-up delay-2">
     <div class="section-label">Key Capabilities</div>
     <div class="caps-grid">
-      <div class="cap-item">ICT strategy authorship &amp; execution</div>
-      <div class="cap-item">AI governance &amp; responsible technology</div>
-      <div class="cap-item">PMO establishment &amp; portfolio management</div>
-      <div class="cap-item">Board &amp; ELT-level risk advisory</div>
-      <div class="cap-item">Large-scale infrastructure program delivery</div>
-      <div class="cap-item">Service model transformation &amp; ITSM design</div>
-      <div class="cap-item">Automation-first platform design</div>
-      <div class="cap-item">HR technology strategy &amp; AI roadmaps</div>
-      <div class="cap-item">High-performing team transformation</div>
-      <div class="cap-item">Mentoring, coaching &amp; capability uplift</div>
-      <div class="cap-item">Community &amp; stakeholder engagement</div>
-      <div class="cap-item">Vendor &amp; procurement management</div>
+      <div class="cap-item">Writing and delivering multi-year technology strategies for schools</div>
+      <div class="cap-item">Developing responsible AI frameworks communities can trust</div>
+      <div class="cap-item">Bringing complex, multi-year programs to life on time and on purpose</div>
+      <div class="cap-item">Advising boards and leadership teams on technology risk</div>
+      <div class="cap-item">Delivering large capital works and infrastructure programs</div>
+      <div class="cap-item">Redesigning how technology teams serve their school communities</div>
+      <div class="cap-item">Finding smarter ways to handle repetitive work and reduce manual effort</div>
+      <div class="cap-item">Planning for AI adoption with purpose, care, and governance</div>
+      <div class="cap-item">Building high-performing teams from the ground up</div>
+      <div class="cap-item">Mentoring, coaching, and growing capability in others</div>
+      <div class="cap-item">Communicating with parents, staff, and community on technology change</div>
+      <div class="cap-item">Procurement and vendor management at every scale</div>
     </div>
+  </section>
+
+  <!-- ── LEADERSHIP PROFILE ── -->
+  <section class="fade-up delay-2">
+    <div class="section-label">Leadership profile</div>
+    <div class="leadership-strip">
+      <div class="ls-cell">
+        <div class="ls-name">Deep Thinker</div>
+        <div class="ls-plain">Prepares carefully. Brings depth.</div>
+      </div>
+      <div class="ls-cell">
+        <div class="ls-name">Activator</div>
+        <div class="ls-plain">Moves ideas to action.</div>
+      </div>
+      <div class="ls-cell">
+        <div class="ls-name">Achiever</div>
+        <div class="ls-plain">Relentless drive for outcomes.</div>
+      </div>
+      <div class="ls-cell">
+        <div class="ls-name">Connector</div>
+        <div class="ls-plain">Sees the whole picture.</div>
+      </div>
+      <div class="ls-cell">
+        <div class="ls-name">High Standards</div>
+        <div class="ls-plain">Holds self to the highest bar.</div>
+      </div>
+    </div>
+    <p style="font-size: 0.82rem; color: var(--text3);">
+      <a href="about.html" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-bdr);">Read the full leadership profile →</a>
+    </p>
   </section>
 
   <!-- ── ACHIEVEMENTS ── -->
   <section class="fade-up delay-3">
     <div class="section-label">Signature Achievements</div>
     <div class="achievement-list">
+
       <div class="achievement">
         <div class="ach-icon">🎯</div>
         <div>
           <div class="ach-title">True North ICT Strategy — Hills Grammar School</div>
-          <p class="ach-body">Authored a multi-year ICT strategy transforming technology from a maintenance function into a strategic partner in the school's educational vision. Three pillars, multi-year investment plan, embedded in school governance.</p>
+          <p class="ach-body">Authored a five-year technology strategy that repositioned technology from a maintenance function into a strategic partner in the school's educational mission. Three pillars — Educational Excellence, Operational Efficiency, and Community Engagement — each with multi-year investment plans, governance structures, and measurable outcomes embedded into the school's wider strategic planning cycle.</p>
         </div>
       </div>
+
       <div class="achievement">
         <div class="ach-icon">🚨</div>
         <div>
-          <div class="ach-title">COVID-19 ICT Response — NSW Department of Education</div>
-          <p class="ach-body">Led the statewide ICT incident coordination response enabling learning continuity for 800,000+ students. 40,000+ emergency devices deployed. Trusted community relationships built under pressure.</p>
+          <div class="ach-title">COVID-19 Learning Continuity Response — NSW Department of Education</div>
+          <p class="ach-body">Formed and led the statewide ICT Incident Coordination team that kept 800,000+ students learning when schools closed. Deployed more than 40,000 emergency devices to students without home internet or equipment. Built new relationships across the school system under extraordinary pressure — and left them stronger than they were before.</p>
         </div>
       </div>
+
       <div class="achievement">
         <div class="ach-icon">🏗️</div>
         <div>
-          <div class="ach-title">ICTOR Program — NSW Department of Education</div>
-          <p class="ach-body">Established and led a multi-million-dollar ICT operational readiness program for new NSW public schools under a $7.9B government infrastructure commitment.</p>
+          <div class="ach-title">New School Readiness Program — NSW Department of Education</div>
+          <p class="ach-body">Established and led a multi-million-dollar program to ensure every new and refurbished NSW public school was fully equipped and technology-ready from day one — as part of the NSW Government's $7.9 billion school infrastructure commitment. Developed the frameworks, standards, and processes that the Department continues to use.</p>
         </div>
       </div>
+
       <div class="achievement">
         <div class="ach-icon">🤖</div>
         <div>
-          <div class="ach-title">AI Governance &amp; Automation — Hills Grammar School</div>
-          <p class="ach-body">Deployed MS Copilot, ChatGPT governance frameworks, chatbot service desk, and automated device lifecycle management. Parents actively commended the AI policy and communication approach.</p>
+          <div class="ach-title">AI Adoption &amp; Governance Program — Hills Grammar School</div>
+          <p class="ach-body">Led the school's first AI adoption program — including responsible-use frameworks, staff capability uplift, parent communication, and a chatbot-powered service desk. The school's AI policy and community communication approach received direct, unsolicited commendation from parents. A model other schools have since requested to learn from.</p>
         </div>
       </div>
+
       <div class="achievement">
         <div class="ach-icon">🎓</div>
         <div>
-          <div class="ach-title">$16M+ SaaS Transformation — University of Sydney</div>
-          <p class="ach-body">Directed the education portfolio: Canvas LMS migration, learning analytics, curriculum mapping platform, and AWS integrations. Standardised the PMO methodology for the institution.</p>
+          <div class="ach-title">$16M Digital Learning Transformation — University of Sydney</div>
+          <p class="ach-body">Directed the university's education technology portfolio, including migration to Canvas LMS, deployment of learning analytics, curriculum mapping tools, and survey platforms. Standardised the project management approach across the ICT division. Delivered on time, in budget, and with measurably higher staff adoption rates than previous programs.</p>
         </div>
       </div>
+
+      <div class="achievement">
+        <div class="ach-icon">👥</div>
+        <div>
+          <div class="ach-title">Team Transformation — Hills Grammar School</div>
+          <p class="ach-body">In 12 months, restructured the ICT team from a reactive help-desk function into a proactive, service-oriented team trusted by staff and respected by leadership. Introduced clearer roles, a published service catalogue, structured project delivery, and a culture of continuous improvement. Staff survey results improved significantly within the first year.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -252,14 +333,15 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
               <span class="tl-date">July 2023 – Present</span>
             </div>
           </summary>
-          <div class="tl-meta">ELT Member · Sydney NSW · 8 direct reports</div>
-          <p class="tl-context">Hills Grammar is an independent K–12 school in Sydney's Hills District. As Director of IT and Executive Leadership Team member, I own the school's technology direction across infrastructure, AI, data governance, and community platforms.</p>
+          <div class="tl-meta">Executive Leadership Team Member · Sydney, NSW · 8 direct reports</div>
+          <p class="tl-context">Hills Grammar is an independent K–12 school in Sydney's Hills District. As Director of IT and a member of the Executive Leadership Team, I own the school's complete technology direction — from the classroom and the staffroom to the boardroom and the parent community.</p>
           <ul class="bullet-list">
-            <li><strong>True North ICT Strategy 2025–2030</strong> — three-pillar roadmap (Educational Excellence, Operational Efficiency, Community Engagement) with multi-year investment plans and governance structures</li>
-            <li><strong>Education Application Review Board</strong> — values-embedded governance process filtering every technology adoption through educational and pastoral criteria</li>
-            <li><strong>AI capability program</strong> — MS Copilot deployment, ChatGPT governance framework, chatbot service desk, device lifecycle automation via MS AutoPilot/Intune</li>
-            <li><strong>Team transformation</strong> — restructured roles, introduced DevOps and Agile, built service catalogue and PMO; team shifted from reactive to trusted strategic partner within 12 months</li>
-            <li><strong>Cyber security uplift</strong> — MFA, phishing simulation, external audit program, Cyber Security Response Protocol, and board-level risk reporting</li>
+            <li>Authored the <strong>True North ICT Strategy 2025–2030</strong> — a three-pillar roadmap (Educational Excellence, Operational Efficiency, Community Engagement) with multi-year investment plans and governance structures aligned to the school's broader strategic goals</li>
+            <li>Established an <strong>Education Application Review Board</strong> — a values-led process that evaluates every new technology against educational and pastoral criteria before adoption</li>
+            <li>Led the school's <strong>AI adoption program</strong> — responsible-use frameworks, Microsoft Copilot rollout, staff training, parent engagement, and an AI-powered service desk for routine support queries</li>
+            <li>Transformed the technology team through restructured roles, clearer service delivery models, and a culture shift from reactive to trusted strategic partner — completed within 12 months</li>
+            <li>Delivered a comprehensive <strong>cyber security uplift</strong> — multi-factor authentication, phishing simulation, independent audit program, incident response protocols, and board-level risk reporting</li>
+            <li>Currently leading technology delivery for the school's major capital works program</li>
           </ul>
         </details>
       </div>
@@ -268,17 +350,17 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
         <details>
           <summary>
             <div class="tl-header">
-              <span class="tl-title">Regional Microsoft Education Solutions Lead (ANZ/JP)</span>
+              <span class="tl-title">Regional Education Solutions Lead — ANZ &amp; Japan</span>
               <span class="tl-org">Lenovo</span>
               <span class="tl-date">April 2022 – July 2023</span>
             </div>
           </summary>
           <div class="tl-meta">ANZ and Japan</div>
-          <p class="tl-context">A vendor-side role deepening commercial perspective on how technology platforms are built, sold, and adopted at scale across education.</p>
+          <p class="tl-context">A deliberate move to the vendor side — to understand how technology platforms are designed, sold, and adopted at scale across education, and to develop commercial perspective that made me a sharper buyer and advisor on return.</p>
           <ul class="bullet-list">
-            <li>Co-defined, developed, and launched <strong>EdVision</strong> — a holistic Microsoft + Lenovo digital ecosystem for K–12, university, and government education across ANZ</li>
-            <li>Delivered ICT maturity assessment tools, hybrid learning platforms, and professional learning programs for educators and executives</li>
-            <li>Provided strategic ICT advisory and thought leadership to educational organisations across Australia and Japan</li>
+            <li>Co-designed and launched <strong>EdVision</strong> — a holistic Microsoft and Lenovo digital learning ecosystem for K–12, university, and government education across Australia, New Zealand, and Japan</li>
+            <li>Developed ICT maturity assessment tools and hybrid learning frameworks used by education leaders to benchmark and plan their technology environments</li>
+            <li>Delivered strategic advisory and professional learning to school and government leaders across the region</li>
           </ul>
         </details>
       </div>
@@ -287,17 +369,18 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
         <details>
           <summary>
             <div class="tl-header">
-              <span class="tl-title">Director, IT &amp; Infrastructure Coordination</span>
+              <span class="tl-title">Director, ICT &amp; Infrastructure Coordination</span>
               <span class="tl-org">NSW Department of Education</span>
               <span class="tl-date">July 2019 – November 2021</span>
             </div>
           </summary>
-          <div class="tl-meta">ELT Member · Sydney NSW · 6 direct, 170+ indirect reports</div>
-          <p class="tl-context">The largest education IT department in the Southern Hemisphere — 2,200+ schools, 800,000 students, 65,000 teachers across NSW.</p>
+          <div class="tl-meta">Executive Leadership Team Member · Sydney, NSW · 6 direct, 170+ indirect reports</div>
+          <p class="tl-context">The largest education IT operation in the Southern Hemisphere — 2,200+ schools, 800,000 students, and 65,000 teachers across NSW. A role combining strategic leadership with operational accountability at a scale few education technology leaders encounter.</p>
           <ul class="bullet-list">
-            <li><strong>COVID-19 ICT Incident Coordination Response</strong> — formed and led the ICR Team; enabled learning continuity for 800,000+ students through emergency device deployment (40,000+ units) and rapid digital transformation</li>
-            <li><strong>ICTOR Program</strong> — multi-million-dollar ICT operational readiness initiative for new and refurbished NSW public schools under the government's $7.9B infrastructure commitment</li>
-            <li>Delivered ICT policy, governance frameworks, and technical standards; advised NSW Parliament and senior government officials on digital education strategy</li>
+            <li>Led the <strong>COVID-19 ICT incident coordination response</strong> — established and led the ICT Coordination team that enabled learning continuity for 800,000+ students; deployed 40,000+ emergency devices and rapidly scaled digital learning access across NSW</li>
+            <li>Established and directed the <strong>ICT Operational Readiness Program</strong> — the multi-million-dollar initiative ensuring new and refurbished NSW public schools were fully technology-ready from opening day, under the NSW Government's $7.9B infrastructure commitment</li>
+            <li>Developed and implemented ICT policy, governance frameworks, and technical standards across 2,200+ school sites</li>
+            <li>Provided advisory briefings to NSW Parliament and senior government officials on digital education strategy and infrastructure</li>
           </ul>
         </details>
       </div>
@@ -312,7 +395,7 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
             </div>
           </summary>
           <ul class="bullet-list" style="margin-top:0.6rem">
-            <li>Managed concurrent capital works and ICT programs including $26M annual device rollout, server refresh across 2,000+ sites, and ICT operational readiness uplift</li>
+            <li>Managed concurrent capital works and technology programs — including the $26M annual device rollout, server refresh across 2,000+ school sites, and school technology readiness uplift</li>
           </ul>
         </details>
       </div>
@@ -321,13 +404,13 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
         <details>
           <summary>
             <div class="tl-header">
-              <span class="tl-title">ICT Program Manager (Education Portfolio)</span>
+              <span class="tl-title">ICT Program Manager — Education Portfolio</span>
               <span class="tl-org">University of Sydney</span>
               <span class="tl-date">2017 – 2018</span>
             </div>
           </summary>
           <ul class="bullet-list" style="margin-top:0.6rem">
-            <li>Directed <strong>$16M+ SaaS transformation portfolio</strong>: Canvas LMS migration, enterprise curriculum mapping, learning analytics, and survey platform renewal; delivered AWS integrations and standardised PMO methodology</li>
+            <li>Accountable to the CIO for a <strong>$16M+ digital learning transformation</strong> — Canvas LMS migration, learning analytics platform, enterprise curriculum mapping, and survey platform renewal; delivered AWS integrations and a standardised project management methodology for the ICT division</li>
           </ul>
         </details>
       </div>
@@ -336,13 +419,13 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
         <details>
           <summary>
             <div class="tl-header">
-              <span class="tl-title">ICT Senior Project Manager</span>
+              <span class="tl-title">Senior ICT Project Manager — Learning Spaces</span>
               <span class="tl-org">University of Sydney</span>
               <span class="tl-date">2015 – 2017</span>
             </div>
           </summary>
           <ul class="bullet-list" style="margin-top:0.6rem">
-            <li>Managed the Learning Space Development Program — AV/ICT infrastructure upgrades across teaching spaces; established BAU cyclical rollout model</li>
+            <li>Delivered the Physical Learning Spaces program — AV and technology upgrades across approximately 700 general teaching spaces; established a sustainable, cyclical rollout model that moved the work from ad-hoc project to managed ongoing program</li>
           </ul>
         </details>
       </div>
@@ -351,14 +434,15 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
         <details>
           <summary>
             <div class="tl-header">
-              <span class="tl-title">Earlier Roles — NSW DoE &amp; TAFE NSW</span>
-              <span class="tl-date">2005 – 2015</span>
+              <span class="tl-title">Earlier Roles — NSW DoE, TAFE NSW</span>
+              <span class="tl-date">2000 – 2015</span>
             </div>
           </summary>
           <ul class="bullet-list" style="margin-top:0.6rem">
-            <li><strong>ICT Service Relationship Manager, NSW DoE (2014–2015)</strong> — led Level 2/3 ICT support across 511 school sites; created the NSW Schools Software Catalogue (still in active use)</li>
-            <li><strong>ICT Relationship Manager, TAFE NSW (2013–2014)</strong> — delivered ICT uplift projects and operational support across 300+ campuses</li>
-            <li><strong>TAFE Hunter roles (2005–2013)</strong> — available on request</li>
+            <li><strong>ICT Service Relationship Manager, NSW DoE (2014–2015)</strong> — led Level 2/3 technology support across 511 school sites; created the NSW Schools Software Catalogue, which remains in active use today</li>
+            <li><strong>ICT Relationship Manager, TAFE NSW (2013–2014)</strong> — delivered technology uplift projects and operational support across 304 campuses and 110,000+ students</li>
+            <li><strong>Regional Technology Project &amp; Portfolio Manager, TAFE NSW (2008–2013)</strong> — coordinated regional technology programs and provided expert advice on classroom and e-learning technology; worked closely with principals and curriculum leaders</li>
+            <li><strong>Teacher — Information Technology, Western Sydney TAFE (2000–2003)</strong> — began my career in education as a classroom IT teacher; this experience shapes how I engage with teaching staff and design learning-centred technology programs to this day</li>
           </ul>
         </details>
       </div>
@@ -380,11 +464,11 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
         </ul>
       </div>
       <div class="qual-col">
-        <h3>Professional Certifications</h3>
+        <h3>Professional</h3>
         <ul class="bullet-list">
-          <li>MSP (Managing Successful Programs) Practitioner</li>
-          <li>PRINCE2 Practitioner</li>
-          <li>ITIL OSA v3 &amp; Foundation v3</li>
+          <li>MSP — Managing Successful Programmes (Practitioner)</li>
+          <li>PRINCE2 Project Management (Practitioner)</li>
+          <li>ITIL OSA v3 &amp; Foundation v3 — IT Service Management</li>
           <li>Kepner &amp; Fourie: Problem Root Cause Analysis</li>
         </ul>
       </div>
@@ -395,7 +479,7 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
   <section>
     <div class="callout" style="text-align:center; border-left: none; border-top: 3px solid var(--accent-bdr);">
       <strong>References available on request.</strong><br>
-      I'm happy to connect you directly with executive leaders from Hills Grammar, NSW Department of Education, or the University of Sydney.<br><br>
+      I am happy to connect you directly with executive leaders from Hills Grammar School, NSW Department of Education, or the University of Sydney.<br><br>
       <a href="mailto:adamwollins@me.com" class="btn btn-primary" style="margin: 0 auto; display: inline-flex;">adamwollins@me.com</a>
     </div>
   </section>
@@ -404,7 +488,7 @@ details[open] .bullet-list { animation: fadeUp 0.2s ease; }
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <span>© 2025 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
+    <span>© 2026 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
     <span>
       <a href="mailto:adamwollins@me.com">adamwollins@me.com</a>
       &nbsp;·&nbsp;

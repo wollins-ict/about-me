@@ -78,6 +78,33 @@
 }
 .service-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
 
+/* Who this is for strip */
+.for-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.for-cell {
+  background: var(--surface);
+  padding: 1.1rem 1.25rem;
+}
+.for-cell .for-title {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.for-cell .for-body {
+  font-size: 0.82rem;
+  color: var(--text3);
+  line-height: 1.5;
+}
+
 /* Resources / articles placeholder */
 .placeholder-grid {
   display: grid;
@@ -168,9 +195,10 @@
 .expect-body { font-size: 0.86rem; color: var(--text2); line-height: 1.65; margin: 0; }
 
 @media (max-width: 640px) {
-  .services-grid  { grid-template-columns: 1fr; }
+  .services-grid    { grid-template-columns: 1fr; }
   .placeholder-grid { grid-template-columns: 1fr; }
-  .expect-grid    { grid-template-columns: 1fr; }
+  .expect-grid      { grid-template-columns: 1fr; }
+  .for-strip        { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -181,10 +209,16 @@
     <a href="index.html" class="nav-logo">Adam <span>Wollins</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">How I Lead</a></li>
       <li><a href="cv.html">CV</a></li>
-      <li><a href="ict-strategy.html" class="active">ICT Strategy for Schools</a></li>
+      <li><a href="work.html">Work Examples</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="ict-strategy.html" class="active">ICT Strategy</a></li>
+      <li><a href="substack.html">Writing</a></li>
+      <li><a href="cht.html">CHT</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
     </ul>
-    <a href="mailto:adamwollins@me.com" class="btn nav-cta">Get in touch</a>
+    <a href="contact.html" class="btn nav-cta">Get in touch</a>
   </div>
 </nav>
 
@@ -194,59 +228,78 @@
   <header class="page-header fade-up">
     <div class="eyebrow">AI &amp; ICT Strategy for Schools</div>
     <h1>Technology leadership, built around your school.</h1>
-    <p class="lead">Schools deserve technology strategy that is genuinely theirs — grounded in your community, your values, and your educational vision. Not a vendor's template. Not a government-issue framework. Yours.</p>
+    <p class="lead">Schools deserve technology strategy that is genuinely theirs — grounded in your community, your values, and your educational vision. Not a vendor's template. Not a government-issue framework. Yours. I know the difference because I've built both — and I know which one actually works.</p>
   </header>
 
-  <!-- ── SERVICES ── -->
+  <!-- ── WHO THIS IS FOR ── -->
   <section class="fade-up delay-1">
+    <div class="section-label">Who this is for</div>
+    <div class="for-strip">
+      <div class="for-cell">
+        <div class="for-title">Principals &amp; Heads of School</div>
+        <div class="for-body">Who want a trusted perspective on technology decisions — without needing to be technology experts themselves.</div>
+      </div>
+      <div class="for-cell">
+        <div class="for-title">Boards &amp; Business Managers</div>
+        <div class="for-body">Who need to govern technology risk and investment confidently, with clear advice that connects technology to educational and financial outcomes.</div>
+      </div>
+      <div class="for-cell">
+        <div class="for-title">Schools in transition</div>
+        <div class="for-body">Who are between technology leaders, managing a team in need of direction, or navigating a change that feels larger than the internal team can absorb.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section class="fade-up delay-2">
     <div class="section-label">What I offer</div>
     <div class="services-grid">
 
       <div class="service-card">
         <div class="service-icon">🗺️</div>
         <div class="service-title">ICT Strategy Development</div>
-        <p class="service-desc">A multi-year technology roadmap built with your leadership team — aligned to your strategic plan, your community's needs, and your capacity to deliver.</p>
+        <p class="service-desc">A multi-year technology roadmap built with your leadership team — grounded in your school's strategic plan, your community's needs, and your realistic capacity to deliver it. Something you can govern, not just file.</p>
         <ul class="service-list">
-          <li>Current state assessment &amp; gap analysis</li>
-          <li>Pillar-based strategy development</li>
-          <li>Investment planning &amp; business cases</li>
-          <li>Governance framework design</li>
+          <li>Current state assessment &amp; honest gap analysis</li>
+          <li>Pillar-based strategy co-developed with your team</li>
+          <li>Investment planning &amp; business cases for the board</li>
+          <li>Governance structures that actually get used</li>
         </ul>
       </div>
 
       <div class="service-card">
         <div class="service-icon">🤖</div>
         <div class="service-title">AI Governance &amp; Adoption</div>
-        <p class="service-desc">Practical, values-grounded AI governance for schools — from policy and parent communication to staff capability programs and responsible adoption frameworks.</p>
+        <p class="service-desc">Practical, values-grounded AI guidance for schools — from policy and parent communication to staff capability programs and responsible adoption. Built for your community, not copied from a generic template.</p>
         <ul class="service-list">
-          <li>AI policy &amp; acceptable use frameworks</li>
-          <li>Staff capability uplift programs</li>
+          <li>Responsible use policies &amp; acceptable use frameworks</li>
+          <li>Staff capability and professional learning programs</li>
           <li>Tool evaluation &amp; procurement support</li>
-          <li>Parent &amp; community communication</li>
+          <li>Parent &amp; community communication that builds trust</li>
         </ul>
       </div>
 
       <div class="service-card">
         <div class="service-icon">🔒</div>
         <div class="service-title">Cyber Security &amp; Risk</div>
-        <p class="service-desc">Cyber security that your board can govern and your community can trust — practical uplift programs without the vendor hype or the false sense of security.</p>
+        <p class="service-desc">Cyber security that your board can govern and your community can trust — practical programs that address real risk, without the vendor hype or the false sense of security that comes from a single-day training session.</p>
         <ul class="service-list">
-          <li>Cyber security posture assessment</li>
-          <li>Board-level risk reporting frameworks</li>
-          <li>Phishing simulation &amp; staff training</li>
-          <li>Incident response planning</li>
+          <li>Independent cyber security posture assessment</li>
+          <li>Board-level risk reporting that is genuinely useful</li>
+          <li>Staff training &amp; phishing awareness programs</li>
+          <li>Incident response planning &amp; practice</li>
         </ul>
       </div>
 
       <div class="service-card">
         <div class="service-icon">👥</div>
         <div class="service-title">Interim &amp; Advisory Leadership</div>
-        <p class="service-desc">Experienced technology leadership when you need it — covering a gap, supporting a search, or providing an independent perspective to your existing team.</p>
+        <p class="service-desc">Experienced technology leadership when and how you need it — covering a gap, supporting a search, mentoring an emerging leader, or providing an independent perspective your existing team can't easily give you.</p>
         <ul class="service-list">
-          <li>Interim Director of IT / CTO</li>
-          <li>Executive advisory &amp; mentoring</li>
-          <li>ICT team assessment &amp; coaching</li>
-          <li>Principal &amp; board advisory</li>
+          <li>Interim Director of Technology / CTO</li>
+          <li>Independent advisory to principal &amp; board</li>
+          <li>ICT team assessment, coaching &amp; mentoring</li>
+          <li>Technology staff recruitment support</li>
         </ul>
       </div>
 
@@ -261,28 +314,28 @@
         <div class="expect-num">01</div>
         <div>
           <div class="expect-title">A conversation, not a pitch</div>
-          <p class="expect-body">We start by understanding your school — your vision, your challenges, your community. The work comes from that, not from a standard offering.</p>
+          <p class="expect-body">We start by understanding your school — your vision, your community, your real challenges. The work comes from that conversation, not from a fixed scope I've decided on in advance.</p>
         </div>
       </div>
       <div class="expect-item">
         <div class="expect-num">02</div>
         <div>
           <div class="expect-title">Genuine partnership</div>
-          <p class="expect-body">I work alongside your team, not above them. Your staff are involved, your leadership is informed, and the outcomes are built to last after I've left.</p>
+          <p class="expect-body">I work alongside your team, not above them. Your staff are involved, your leadership is informed, and the outcomes are built to last well after my involvement ends.</p>
         </div>
       </div>
       <div class="expect-item">
         <div class="expect-num">03</div>
         <div>
           <div class="expect-title">Practical, not theoretical</div>
-          <p class="expect-body">Everything I bring has been tested in real schools and real government departments. Clear recommendations you can actually act on.</p>
+          <p class="expect-body">Everything I bring has been tested in real schools and real government departments — at every scale. Clear recommendations you can actually act on, in the context you're actually in.</p>
         </div>
       </div>
       <div class="expect-item">
         <div class="expect-num">04</div>
         <div>
           <div class="expect-title">Honest about what I don't know</div>
-          <p class="expect-body">I'll tell you when something is outside my expertise, and I'll help you find the right person for it. No overpromising.</p>
+          <p class="expect-body">I will tell you when something sits outside my expertise — and help you find the right person for it. No overpromising. No 'I can do that' when I can't do it well.</p>
         </div>
       </div>
     </div>
@@ -292,7 +345,7 @@
   <section class="fade-up">
     <div class="section-label">Articles &amp; resources</div>
     <div class="callout accent" style="margin-bottom: 1.25rem;">
-      Articles, frameworks, and practical resources for school leaders are being developed and will be published here. Check back soon — or get in touch if you have a specific topic you'd like me to address.
+      Practical articles and frameworks for school leaders are being developed here. Topics include how to evaluate AI tools responsibly, what good technology governance looks like for a board, and how to build a technology team your staff actually want to work with. Get in touch if there's a specific topic you'd like me to address.
     </div>
     <div class="placeholder-grid">
       <div class="placeholder-card">
@@ -302,7 +355,7 @@
       </div>
       <div class="placeholder-card">
         <span class="placeholder-tag">Coming soon · ICT Strategy</span>
-        <div class="placeholder-title">How to build a school ICT strategy that your board will actually govern</div>
+        <div class="placeholder-title">How to build a school technology strategy your board will actually govern</div>
         <div class="placeholder-note">Article in development</div>
       </div>
       <div class="placeholder-card">
@@ -317,7 +370,7 @@
   <section>
     <div class="cta-block fade-up">
       <h2>Let's talk about your school.</h2>
-      <p>Whether you're starting from scratch, reviewing a strategy that isn't working, or just exploring what good ICT leadership looks like — I'm happy to have a conversation.</p>
+      <p>Whether you're starting from scratch, reviewing a strategy that isn't working, or simply want to understand what good technology leadership looks like — I'm happy to have a conversation.</p>
       <div class="cta-buttons">
         <a href="mailto:adamwollins@me.com" class="btn btn-primary">Email me</a>
         <a href="tel:+61400842314" class="btn btn-secondary">(+61) 400 842 314</a>
@@ -329,7 +382,7 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <span>© 2025 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
+    <span>© 2026 Adam Wollins &nbsp;·&nbsp; Sydney, NSW</span>
     <span>
       <a href="mailto:adamwollins@me.com">adamwollins@me.com</a>
       &nbsp;·&nbsp;
